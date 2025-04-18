@@ -8,7 +8,8 @@
 class DatabaseManager {
 public:
     static DatabaseManager& instance();
-    bool initialize(const QString& path); // 初始化数据库连接
+    DatabaseManager(const QString& path);
+    bool initialize(); // 初始化数据库连接
     QSqlQuery executeQuery(const QString& query); // 执行SQL
     // 其他便捷方法（如用户是否存在、充值等）
 private:
