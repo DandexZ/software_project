@@ -32,8 +32,8 @@ bool DatabaseManager::initialize() {
         return false;
     }
 
-    // 创建cards表（余额变动记录表）
-    success = query.exec("CREATE TABLE IF NOT EXISTS cards ("
+    // 创建balance_change表（余额变动记录表）
+    success = query.exec("CREATE TABLE IF NOT EXISTS balance_change ("
                          "id INTEGER PRIMARY KEY AUTOINCREMENT, "
                          "date TEXT NOT NULL, "           // 日期
                          "card_id TEXT NOT NULL, "        // 卡号
@@ -42,7 +42,7 @@ bool DatabaseManager::initialize() {
                          "FOREIGN KEY (card_id) REFERENCES users(card_id))");  // 外键关联
 
     if (!success) {
-        qDebug() << "Create cards table error:" << query.lastError();
+        qDebug() << "Create balance_change table error:" << query.lastError();
         return false;
     }
 
