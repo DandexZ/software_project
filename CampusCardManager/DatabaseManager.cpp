@@ -2,6 +2,9 @@
 
 DatabaseManager::DatabaseManager(const QString& path){
     m_db = QSqlDatabase::addDatabase("QSQLITE");
+    //path =  "//data.db";
+    //database.setDatabaseName(dbPath);
+
     m_db.setDatabaseName(path);
 
     if (!m_db.open()) {

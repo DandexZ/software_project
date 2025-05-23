@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    DatabaseManager m("./database/data.db");
+    DatabaseManager m("E:\\softwork\\soft_work1\\software_project\\CampusCardManager\\database\\data.db");
     w.show();
     return a.exec();
 }

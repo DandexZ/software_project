@@ -4,7 +4,8 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
-
+#include <QDebug>
+#include <QApplication>
 class DatabaseManager {
 public:
     static DatabaseManager& instance();
