@@ -13,14 +13,20 @@ CONFIG += c++17
 SOURCES += \
     DatabaseManager.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    manager.cpp \
+    usrwindow.cpp
 
 HEADERS += \
     DatabaseManager.h \
-    mainwindow.h
+    mainwindow.h \
+    manager.h \
+    usrwindow.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    manager.ui \
+    usrwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
