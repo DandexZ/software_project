@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "DatabaseManager.h"
+
 #include <QApplication>
 
 int main(int argc, char *argv[])
@@ -9,9 +9,8 @@ int main(int argc, char *argv[])
     QString dbPath = QCoreApplication::applicationDirPath() + "/../../../database/data.db";
     DatabaseManager m(dbPath);
 
-/*
-zhr测试数据库语句
-*/
+//zhr测试数据库语句
+
     // 添加用户
     if (m.addUser("20230101", "Alice", "CARD123", "pwd123")) {
         qDebug() << "Add user success.";
