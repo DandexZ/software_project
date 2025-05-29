@@ -4,14 +4,10 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
-<<<<<<< HEAD
 #include <QDebug>
 #include <QApplication>
-=======
 #include <QVariant>
 #include <QDebug>
-
->>>>>>> 6388e1b3e35aec9688393a36b2087f27ddc6e8c4
 class DatabaseManager {
 public:
     static DatabaseManager& instance();
@@ -24,6 +20,16 @@ public:
     bool deleteUser(const QString& cardId);
     QSqlQuery getUserByCardId(const QString& cardId);
     bool updateBalance(const QString& cardId, double amount);
+
+    //完善查改
+    QSqlQuery getUserInfoAsUser(const QString& studentId);
+    bool modifyUserSelf(const QString& studentId, const QString& newName, const QString& newPassword);
+    QSqlQuery getUserInfoAsAdmin(const QString& studentId);
+    bool modifyUserAsAdmin(const QString& studentId, const QString& name, const QString& cardId, const QString& password, double balance);
+    bool insertBalanceChange(const QString& cardId, const QString& changeType, double amount);
+    QSqlQuery queryBalanceChanges(const QString& cardId);
+    QSqlQuery getAdminInfo(const QString& admin_id);
+
 
 private:
     QSqlDatabase m_db;

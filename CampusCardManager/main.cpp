@@ -6,9 +6,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-<<<<<<< HEAD
-    DatabaseManager m("E:\\softwork\\soft_work1\\software_project\\CampusCardManager\\database\\data.db");
-=======
     QString dbPath = QCoreApplication::applicationDirPath() + "/../../../database/data.db";
     DatabaseManager m(dbPath);
 
@@ -57,7 +54,6 @@ int main(int argc, char *argv[])
     }
 //zhr end
 
->>>>>>> 6388e1b3e35aec9688393a36b2087f27ddc6e8c4
     w.show();
     return a.exec();
 }

@@ -4,9 +4,6 @@
 DatabaseManager::DatabaseManager(const QString& path){
     // 使用 SQLite 驱动创建数据库连接
     m_db = QSqlDatabase::addDatabase("QSQLITE");
-    //path =  "//data.db";
-    //database.setDatabaseName(dbPath);
-
     m_db.setDatabaseName(path);
 
     // 尝试打开数据库
@@ -21,7 +18,7 @@ DatabaseManager::DatabaseManager(const QString& path){
     }
 }
 
-// 初始化数据库结构，包括 users 和 balance_change 两张表
+// 初始化数据库结构，包括 users 和 balance_change 和 administrators 三张表
 bool DatabaseManager::initialize() {
     QSqlQuery query;
 
@@ -52,6 +49,17 @@ bool DatabaseManager::initialize() {
         return false;
     }
 
+    // 创建 administrators 表：保存管理员信息
+    success = query.exec("CREATE TABLE IF NOT EXISTS administrators ("
+                         "admin_id TEXT PRIMARY KEY, "    // 管理员号（主键）
+                         "name TEXT NOT NULL, "           // 姓名
+                         "password TEXT UNIQUE)");          // 密码（唯一）
+
+    if (!success) {
+        qDebug() << "Create administrators table error:" << query.lastError();
+        return false;
+    }
+
     return true;
 }
 
@@ -62,6 +70,57 @@ QSqlQuery DatabaseManager::executeQuery(const QString& queryStr) {
         qDebug() << "SQL Error:" << query.lastError().text();
     }
     return query;
+}
+
+//用户查询
+QSqlQuery DatabaseManager::getUserInfoAsUser(const QString& studentId) {
+    QString queryStr = QString("SELECT * FROM users WHERE student_id = '%1'").arg(studentId);
+    return executeQuery(queryStr);
+}
+
+//用户更改自己
+bool DatabaseManager::modifyUserSelf(const QString& studentId, const QString& newName, const QString& newPassword) {
+    QString queryStr = QString("UPDATE users SET name = '%1', password = '%2' WHERE student_id = '%3'")
+    .arg(newName, newPassword, studentId);
+    return executeQuery(queryStr).lastError().type() == QSqlError::NoError;
+}
+
+//管理员查询
+QSqlQuery DatabaseManager::getUserInfoAsAdmin(const QString& studentId) {
+    QString queryStr = QString("SELECT * FROM users WHERE student_id = '%1'").arg(studentId);
+    return executeQuery(queryStr);
+}
+
+//查询管理员
+QSqlQuery DatabaseManager::getAdminInfo(const QString& admin_id) {
+    QString queryStr = QString("SELECT * FROM administrators WHERE admin_id = '%1'").arg(admin_id);
+    return executeQuery(queryStr);
+}
+
+//管理员修改用户
+bool DatabaseManager::modifyUserAsAdmin(const QString& studentId, const QString& name,
+                                        const QString& cardId, const QString& password, double balance) {
+    QString queryStr = QString("UPDATE users SET name = '%1', card_id = '%2', password = '%3', balance = %4 "
+                               "WHERE student_id = '%5'")
+                           .arg(name, cardId, password)
+                           .arg(balance)
+                           .arg(studentId);
+    return executeQuery(queryStr).lastError().type() == QSqlError::NoError;
+}
+
+//增加余额变动记录
+bool DatabaseManager::insertBalanceChange(const QString& cardId, const QString& changeType, double amount) {
+    QString insertLog = QString("INSERT INTO balance_change (date, card_id, change_type, amount) "
+                                "VALUES (datetime('now'), '%1', '%2', %3)")
+                            .arg(cardId, changeType)
+                            .arg(amount);
+    return executeQuery(insertLog).lastError().type() == QSqlError::NoError;
+}
+
+//查询余额变动记录
+QSqlQuery DatabaseManager::queryBalanceChanges(const QString& cardId) {
+    QString queryStr = QString("SELECT * FROM balance_change WHERE card_id = '%1' ORDER BY date DESC").arg(cardId);
+    return executeQuery(queryStr);
 }
 
 // 添加新用户，返回是否成功
