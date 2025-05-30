@@ -15,21 +15,18 @@
 - **可达性**：从初始标记出发，通过一系列变迁触发，可以到达的所有标记集合称为可达集。
 
 #### 3. **Petri网的建模能力**
-- **并发（Concurrency）**：多个变迁可以同时被使能，独立触发。
+- **并发（Concurrency）**：多个变迁可以同时被使能，独立触发。  
+![parallel_activities](../images/parallel_activities.png)
 
-  <img src="C:\Users\86186\Desktop\学习\大三下\软件工程\parallel_activities.png" alt="parellel" style="float: left; zoom: 60%"/>
+- **同步（Synchronization）**：多个变迁需要同时满足条件才能触发。  
+![sequential_activities](../images/synchronization._activities.png)
+  
 
-- **同步（Synchronization）**：多个变迁需要同时满足条件才能触发。
+- **互斥（Mutual Exclusion）**：资源竞争导致某些变迁不能同时触发。   
+![mutex_activities](../images/mutex_activities.png)
 
-  <img src="C:\Users\86186\Desktop\学习\大三下\软件工程\synchronization._activities.png" alt="synchronization" style="float: left; zoom: 50%"/>
-
-- **互斥（Mutual Exclusion）**：资源竞争导致某些变迁不能同时触发。
-
-  <img src="C:\Users\86186\Desktop\学习\大三下\软件工程\mutex_activities.png" alt="mutex" style="float: left; zoom: 40%"/>
-
-- **有限资源（Limited Resources）**：通过令牌数量限制资源的可用性。
-
-  <img src="C:\Users\86186\Desktop\学习\大三下\软件工程\limited_resources.png" alt="limited" style="float: left; zoom: 45%"/>
+- **有限资源（Limited Resources）**：通过令牌数量限制资源的可用性。  
+![limited_resources](../images/limited_resources.png)
 
 #### 4. **Petri网的性质**
 - **活性（Liveness）**：变迁在任何可达标记中都有被触发的可能性。
@@ -40,10 +37,8 @@
 #### 5. **分析方法**
 - **可达图（Reachability Graph）**：枚举所有可能状态及变迁路径，通过生成所有可达标记及其之间的变迁关系，分析系统的行为。
 
-  <img src="C:\Users\86186\Desktop\学习\大三下\软件工程\rechability.png" alt="rechability" style="float: left; zoom: 50%"/>
-
-  <img src="C:\Users\86186\Desktop\学习\大三下\软件工程\rechability1.png" alt="parellel" style="float: left; zoom: 55%"/>
-
+![rechability](../images/rechability.png)  
+![rechability1](../images/rechability1.png)
 - **矩阵分析（Matrix Analysis）**：使用输入矩阵、输出矩阵和关联矩阵，通过线性代数方法分析可达性和不变性。
 
 #### 6. **扩展Petri网**
