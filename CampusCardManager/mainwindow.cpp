@@ -5,13 +5,28 @@
 #include <QSqlDatabase>
 #include <QDebug>
 #include<QMessageBox>
+#include<QGraphicsDropShadowEffect>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->statusBar()->hide();  // 移除状态栏
     connect(ui->input_code, &QLineEdit::returnPressed, ui->pushButton, &QPushButton::click);
+
+    //设置图片
+       QPixmap *pix = new QPixmap(":/1.png");
+       QSize sz = ui->label_image->size();
+       ui->label_image->setPixmap(pix->scaled(sz));
+
+       //设置图片阴影效果
+       QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
+       shadow->setOffset(-3, 0);
+       shadow->setColor(QColor("#888888"));
+       shadow->setBlurRadius(30);
+       ui->label_image->setGraphicsEffect(shadow);
+
 }
 
 MainWindow::~MainWindow()
