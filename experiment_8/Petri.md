@@ -15,17 +15,17 @@
 - **可达性**：从初始标记出发，通过一系列变迁触发，可以到达的所有标记集合称为可达集。
 
 #### 3. **Petri网的建模能力**
-- **并发（Concurrency）**：多个变迁可以同时被使能，独立触发。
+- **并发（Concurrency）**：多个变迁可以同时被使能，独立触发。  
 ![parallel_activities](../images/parallel_activities.png)
 
-- **同步（Synchronization）**：多个变迁需要同时满足条件才能触发。
+- **同步（Synchronization）**：多个变迁需要同时满足条件才能触发。  
 ![sequential_activities](../images/synchronization._activities.png)
   
 
-- **互斥（Mutual Exclusion）**：资源竞争导致某些变迁不能同时触发。
+- **互斥（Mutual Exclusion）**：资源竞争导致某些变迁不能同时触发。   
 ![mutex_activities](../images/mutex_activities.png)
 
-- **有限资源（Limited Resources）**：通过令牌数量限制资源的可用性。
+- **有限资源（Limited Resources）**：通过令牌数量限制资源的可用性。  
 ![limited_resources](../images/limited_resources.png)
 
 #### 4. **Petri网的性质**
@@ -37,7 +37,7 @@
 #### 5. **分析方法**
 - **可达图（Reachability Graph）**：枚举所有可能状态及变迁路径，通过生成所有可达标记及其之间的变迁关系，分析系统的行为。
 
-![rechability](../images/rechability.png)
+![rechability](../images/rechability.png)  
 ![rechability1](../images/rechability1.png)
 - **矩阵分析（Matrix Analysis）**：使用输入矩阵、输出矩阵和关联矩阵，通过线性代数方法分析可达性和不变性。
 
