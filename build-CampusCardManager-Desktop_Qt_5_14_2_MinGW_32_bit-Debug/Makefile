@@ -277,7 +277,8 @@ Makefile: ../CampusCardManager/CampusCardManager.pro ../../../../Qt/Qt5.14.2/5.1
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Sql.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl \
-		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf \
+		../CampusCardManager/images.qrc
 	$(QMAKE) -o Makefile ..\CampusCardManager\CampusCardManager.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/spec_pre.prf:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/qdevice.pri:
@@ -487,6 +488,7 @@ Makefile: ../CampusCardManager/CampusCardManager.pro ../../../../Qt/Qt5.14.2/5.1
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
+../CampusCardManager/images.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\CampusCardManager\CampusCardManager.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
