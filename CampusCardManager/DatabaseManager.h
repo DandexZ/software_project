@@ -7,11 +7,15 @@
 #include <QDebug>
 #include <QApplication>
 #include <QVariant>
+#include <QFile>
+#include <QDir>
 #include <QDebug>
+#include <QStandardPaths>
 class DatabaseManager {
 public:
-    static DatabaseManager& instance();
-    DatabaseManager(const QString& path);
+    static DatabaseManager& instance(const QString& path = "");
+    DatabaseManager(const DatabaseManager&) = delete;
+    DatabaseManager& operator=(const DatabaseManager&) = delete;
     bool initialize(); // 初始化数据库连接
     QSqlQuery executeQuery(const QString& query); // 执行SQL
 
@@ -32,8 +36,9 @@ public:
 
 
 private:
+    DatabaseManager(const QString& path); // 私有构造函数
     QSqlDatabase m_db;
-    DatabaseManager() {} // 单例模式
+    QString m_dbPath;
 };
 
 #endif // DATABASEMANAGER_H

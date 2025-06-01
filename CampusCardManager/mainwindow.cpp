@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->input_code, &QLineEdit::returnPressed, ui->pushButton, &QPushButton::click);
 
     //设置图片
-       QPixmap *pix = new QPixmap(":/1.png");
+       QPixmap *pix = new QPixmap(":/images/1.png");
        QSize sz = ui->label_image->size();
        ui->label_image->setPixmap(pix->scaled(sz));
 
@@ -55,7 +55,7 @@ void MainWindow::on_pushButton_clicked()
     //用户存在验证密码是否正确
 
     // 模拟验证成功
-    bool loginSuccess = false;
+    bool loginSuccess = true;
 
     if(!loginSuccess) {
         QMessageBox::warning(this, "登录失败", "用户名或密码错误!");

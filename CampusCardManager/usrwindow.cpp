@@ -2,6 +2,7 @@
 #include "ui_usrwindow.h"
 #include <QInputDialog>
 #include<QMessageBox>
+#include<QGraphicsDropShadowEffect>
 
 UsrWindow::UsrWindow(QWidget *parent) :
     QWidget(parent),
@@ -12,8 +13,20 @@ UsrWindow::UsrWindow(QWidget *parent) :
 //    ui->numberMessage->setText(number);
 //    ui->moneyMessage->setText(money);
     ui->nameMessage->setText("宫毓希");//从数据库中选取信息输出 姓名、学号、余额
-    ui->numberMessage->setText("2022");
+    ui->numberMessage->setText("202200130000");
     ui->moneyMessage->setText("1000000");
+    //设置图片
+       QPixmap *pix = new QPixmap(":/images/2.jpg");
+       QSize sz = ui->label_image->size();
+       ui->label_image->setPixmap(pix->scaled(sz));
+
+       //设置图片阴影效果
+       QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
+       shadow->setOffset(-3, 0);
+       shadow->setColor(QColor("#888888"));
+       shadow->setBlurRadius(30);
+       ui->label_image->setGraphicsEffect(shadow);
+
 }
 
 UsrWindow::~UsrWindow()

@@ -1,17 +1,12 @@
 #include "DatabaseManager.h"
 
-// 构造函数，接收数据库路径作为参数
-DatabaseManager::DatabaseManager(const QString& path){
-    // 使用 SQLite 驱动创建数据库连接
-    m_db = QSqlDatabase::addDatabase("QSQLITE");
-    m_db.setDatabaseName(path);
+DatabaseManager& DatabaseManager::instance(const QString& path) {
+    static DatabaseManager instance(path);
+    return instance;
+}
 
-    // 尝试打开数据库
-    if (!m_db.open()) {
-        qDebug() << "Failed to open database:" << m_db.lastError().text();
-        return;
-    }
-
+DatabaseManager::DatabaseManager(const QString& path)
+    : m_dbPath(path) {
     // 初始化数据库表结构
     if (!initialize()) {
         qDebug() << "Failed to initialize database tables!";
@@ -20,6 +15,15 @@ DatabaseManager::DatabaseManager(const QString& path){
 
 // 初始化数据库结构，包括 users 和 balance_change 和 administrators 三张表
 bool DatabaseManager::initialize() {
+    // 使用 SQLite 驱动创建数据库连接
+    m_db = QSqlDatabase::addDatabase("QSQLITE");
+    m_db.setDatabaseName(m_dbPath);
+
+    // 尝试打开数据库
+    if (!m_db.open()) {
+        qDebug() << "Failed to open database:" << m_db.lastError().text();
+        return false;
+    }
     QSqlQuery query;
 
     // 创建 users 表：保存用户的基本信息

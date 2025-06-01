@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+<file alias="images/1.png">D:/fileForStudy/codes/software_project/CampusCardManager/images/1.png</file>
+<file alias="images/2.jpg">D:/fileForStudy/codes/software_project/CampusCardManager/images/2.jpg</file>
+<file alias="images/images.qrc">D:/fileForStudy/codes/software_project/CampusCardManager/images/images.qrc</file>
+</qresource>
+</RCC>
