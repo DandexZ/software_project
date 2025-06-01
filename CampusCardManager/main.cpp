@@ -24,9 +24,16 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
+<<<<<<< HEAD
+    QString dbPath = QCoreApplication::applicationDirPath() + "/../../CampusCardManager/database/data.db";
+    //QString dbPath = " E:\\softwork\\soft_work1\\software_project\\CampusCardManager\\database";
+    qDebug()<<"请检查数据库是否在 "<<dbPath;
+    DatabaseManager m(dbPath);
+=======
     QString dbPath = getDatabasePath();
     qDebug() << "数据库路径为 "<< dbPath;
     DatabaseManager::instance(dbPath);
+>>>>>>> 8f170b3ba0a6be8fe1e39cfedadd1d05dbbd2a81
 
 //zhr测试数据库语句
     /*
@@ -75,6 +82,7 @@ int main(int argc, char *argv[])
     if (!result.next()) {
         qDebug() << "Confirmed: user no longer exists.";
     }
+
 //zhr end
 
     w.show();
