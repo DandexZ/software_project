@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>723</width>
-    <height>427</height>
+    <width>780</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QLabel" name="hint">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>421</width>
-     <height>51</height>
+     <x>430</x>
+     <y>80</y>
+     <width>441</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="ChangePassword">
    <property name="geometry">
     <rect>
-     <x>379</x>
-     <y>250</y>
+     <x>620</x>
+     <y>330</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -42,8 +42,8 @@
   <widget class="QPushButton" name="SearchTransactions">
    <property name="geometry">
     <rect>
-     <x>189</x>
-     <y>250</y>
+     <x>440</x>
+     <y>330</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -55,8 +55,8 @@
   <widget class="QSplitter" name="splitter">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>100</y>
+     <x>460</x>
+     <y>160</y>
      <width>271</width>
      <height>41</height>
     </rect>
@@ -70,6 +70,12 @@
     </property>
    </widget>
    <widget class="QLabel" name="nameMessage">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -78,8 +84,8 @@
   <widget class="QSplitter" name="splitter_2">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>140</y>
+     <x>460</x>
+     <y>200</y>
      <width>271</width>
      <height>41</height>
     </rect>
@@ -93,6 +99,12 @@
     </property>
    </widget>
    <widget class="QLabel" name="numberMessage">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -101,8 +113,8 @@
   <widget class="QSplitter" name="splitter_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>180</y>
+     <x>460</x>
+     <y>240</y>
      <width>271</width>
      <height>41</height>
     </rect>
@@ -116,10 +128,29 @@
     </property>
    </widget>
    <widget class="QLabel" name="moneyMessage">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="label_image">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>390</width>
+     <height>520</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>
