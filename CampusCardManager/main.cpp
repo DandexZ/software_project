@@ -19,7 +19,6 @@ QString getDatabasePath() {
     return dbPath;
 }
 
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
