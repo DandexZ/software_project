@@ -33,51 +33,67 @@ public:
     QSplitter *splitter_3;
     QLabel *money;
     QLabel *moneyMessage;
+    QLabel *label_image;
 
     void setupUi(QWidget *UsrWindow)
     {
         if (UsrWindow->objectName().isEmpty())
             UsrWindow->setObjectName("UsrWindow");
-        UsrWindow->resize(723, 427);
+        UsrWindow->resize(780, 520);
         hint = new QLabel(UsrWindow);
         hint->setObjectName("hint");
-        hint->setGeometry(QRect(30, 30, 421, 51));
+        hint->setGeometry(QRect(430, 80, 441, 61));
         ChangePassword = new QPushButton(UsrWindow);
         ChangePassword->setObjectName("ChangePassword");
-        ChangePassword->setGeometry(QRect(379, 250, 121, 41));
+        ChangePassword->setGeometry(QRect(620, 330, 121, 41));
         SearchTransactions = new QPushButton(UsrWindow);
         SearchTransactions->setObjectName("SearchTransactions");
-        SearchTransactions->setGeometry(QRect(189, 250, 111, 41));
+        SearchTransactions->setGeometry(QRect(440, 330, 111, 41));
         splitter = new QSplitter(UsrWindow);
         splitter->setObjectName("splitter");
-        splitter->setGeometry(QRect(190, 100, 271, 41));
+        splitter->setGeometry(QRect(460, 160, 271, 41));
         splitter->setOrientation(Qt::Horizontal);
         name = new QLabel(splitter);
         name->setObjectName("name");
         splitter->addWidget(name);
         nameMessage = new QLabel(splitter);
         nameMessage->setObjectName("nameMessage");
+        nameMessage->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
+"border:1px groove gray;border-radius:\n"
+"7px;padding:2px 4px;\n"
+"font: 10pt \"Candara\";"));
         splitter->addWidget(nameMessage);
         splitter_2 = new QSplitter(UsrWindow);
         splitter_2->setObjectName("splitter_2");
-        splitter_2->setGeometry(QRect(190, 140, 271, 41));
+        splitter_2->setGeometry(QRect(460, 200, 271, 41));
         splitter_2->setOrientation(Qt::Horizontal);
         number = new QLabel(splitter_2);
         number->setObjectName("number");
         splitter_2->addWidget(number);
         numberMessage = new QLabel(splitter_2);
         numberMessage->setObjectName("numberMessage");
+        numberMessage->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
+"border:1px groove gray;border-radius:\n"
+"7px;padding:2px 4px;\n"
+"font: 10pt \"Candara\";"));
         splitter_2->addWidget(numberMessage);
         splitter_3 = new QSplitter(UsrWindow);
         splitter_3->setObjectName("splitter_3");
-        splitter_3->setGeometry(QRect(190, 180, 271, 41));
+        splitter_3->setGeometry(QRect(460, 240, 271, 41));
         splitter_3->setOrientation(Qt::Horizontal);
         money = new QLabel(splitter_3);
         money->setObjectName("money");
         splitter_3->addWidget(money);
         moneyMessage = new QLabel(splitter_3);
         moneyMessage->setObjectName("moneyMessage");
+        moneyMessage->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
+"border:1px groove gray;border-radius:\n"
+"7px;padding:2px 4px;\n"
+"font: 10pt \"Candara\";"));
         splitter_3->addWidget(moneyMessage);
+        label_image = new QLabel(UsrWindow);
+        label_image->setObjectName("label_image");
+        label_image->setGeometry(QRect(0, 0, 390, 520));
 
         retranslateUi(UsrWindow);
 
@@ -96,6 +112,7 @@ public:
         numberMessage->setText(QString());
         money->setText(QCoreApplication::translate("UsrWindow", "\344\275\231\351\242\235", nullptr));
         moneyMessage->setText(QString());
+        label_image->setText(QString());
     } // retranslateUi
 
 };

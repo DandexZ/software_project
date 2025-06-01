@@ -424,7 +424,9 @@ Makefile: ../../CampusCardManager.pro D:/apps/theQt/6.8.2/mingw_64/mkspecs/win32
 		D:/apps/theQt/6.8.2/mingw_64/lib/Qt6Sql.prl \
 		D:/apps/theQt/6.8.2/mingw_64/lib/Qt6Core.prl \
 		D:/apps/theQt/6.8.2/mingw_64/lib/Qt6EntryPoint.prl \
-		D:/apps/theQt/6.8.2/mingw_64/mkspecs/features/build_pass.prf
+		D:/apps/theQt/6.8.2/mingw_64/mkspecs/features/build_pass.prf \
+		release/qmake_qmake_immediate.qrc \
+		debug/qmake_qmake_immediate.qrc
 	$(QMAKE) -o Makefile ..\..\CampusCardManager.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 D:/apps/theQt/6.8.2/mingw_64/mkspecs/features/spec_pre.prf:
 D:/apps/theQt/6.8.2/mingw_64/mkspecs/features/device_config.prf:
@@ -781,6 +783,8 @@ D:/apps/theQt/6.8.2/mingw_64/lib/Qt6Sql.prl:
 D:/apps/theQt/6.8.2/mingw_64/lib/Qt6Core.prl:
 D:/apps/theQt/6.8.2/mingw_64/lib/Qt6EntryPoint.prl:
 D:/apps/theQt/6.8.2/mingw_64/mkspecs/features/build_pass.prf:
+release/qmake_qmake_immediate.qrc:
+debug/qmake_qmake_immediate.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\..\CampusCardManager.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 

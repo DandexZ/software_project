@@ -35,7 +35,7 @@ public:
     {
         if (Manager->objectName().isEmpty())
             Manager->setObjectName("Manager");
-        Manager->resize(726, 422);
+        Manager->resize(726, 411);
         SearchTransactions = new QPushButton(Manager);
         SearchTransactions->setObjectName("SearchTransactions");
         SearchTransactions->setGeometry(QRect(210, 290, 111, 41));
