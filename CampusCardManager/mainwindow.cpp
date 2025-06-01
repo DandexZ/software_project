@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->input_code, &QLineEdit::returnPressed, ui->pushButton, &QPushButton::click);
 
     //设置图片
-       QPixmap *pix = new QPixmap(":/1.png");
+       QPixmap *pix = new QPixmap(":/images/1.png");
        QSize sz = ui->label_image->size();
        ui->label_image->setPixmap(pix->scaled(sz));
 

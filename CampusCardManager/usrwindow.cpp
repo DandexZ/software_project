@@ -16,7 +16,7 @@ UsrWindow::UsrWindow(QWidget *parent) :
     ui->numberMessage->setText("202200130000");
     ui->moneyMessage->setText("1000000");
     //设置图片
-       QPixmap *pix = new QPixmap(":/2.jpg");
+       QPixmap *pix = new QPixmap(":/images/2.jpg");
        QSize sz = ui->label_image->size();
        ui->label_image->setPixmap(pix->scaled(sz));
 

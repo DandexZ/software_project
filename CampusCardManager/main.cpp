@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     QString dbPath = QCoreApplication::applicationDirPath() + "/../../../database/data.db";
+    qDebug() << "检查数据库路径是否为 "<< dbPath;
     DatabaseManager m(dbPath);
 
 //zhr测试数据库语句
