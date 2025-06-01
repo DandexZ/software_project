@@ -6,7 +6,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    QString dbPath = QCoreApplication::applicationDirPath() + "/../../../database/data.db";
+    QString dbPath = QCoreApplication::applicationDirPath() + "/../../CampusCardManager/database/data.db";
+    //QString dbPath = " E:\\softwork\\soft_work1\\software_project\\CampusCardManager\\database";
+    qDebug()<<"请检查数据库是否在 "<<dbPath;
     DatabaseManager m(dbPath);
 
 //zhr测试数据库语句
@@ -52,6 +54,7 @@ int main(int argc, char *argv[])
     if (!result.next()) {
         qDebug() << "Confirmed: user no longer exists.";
     }
+
 //zhr end
 
     w.show();
