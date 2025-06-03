@@ -4,10 +4,12 @@
 #include<QMessageBox>
 #include<QGraphicsDropShadowEffect>
 
-UsrWindow::UsrWindow(QWidget *parent) :
+UsrWindow::UsrWindow(QWidget *parent,QString &db_path) :
     QWidget(parent),
-    ui(new Ui::UsrWindow)
+    ui(new Ui::UsrWindow),
+    m_dbManager(DatabaseManager::instance(db_path))
 {
+    dbpath=db_path;
     ui->setupUi(this);
 //    ui->nameMessage->setText(name);//从数据库中选取信息输出 姓名、学号、余额
 //    ui->numberMessage->setText(number);

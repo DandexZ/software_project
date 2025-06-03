@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "DatabaseManager.h"
 #include <QApplication>
-
+#include<iostream>
+using namespace std;
 QString getDatabasePath() {
 /* 获取应用数据存储路径
     会从database_initial中复制初始数据库到该Debug/Release/ProFile，数据不互通，仅在该处修改
@@ -22,8 +23,9 @@ QString getDatabasePath() {
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
     QString dbPath = getDatabasePath();
+    MainWindow w(nullptr,dbPath);
+
     qDebug() << "数据库路径为 "<< dbPath;
     DatabaseManager::instance(dbPath);
 
@@ -74,7 +76,8 @@ int main(int argc, char *argv[])
     if (!result.next()) {
         qDebug() << "Confirmed: user no longer exists.";
     }
-
+QString test_1=DatabaseManager::instance().getCardIdByStudentId("202200130028");
+qDebug("%s ",qPrintable(test_1));
 //zhr end
 
     w.show();

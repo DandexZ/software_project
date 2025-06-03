@@ -180,3 +180,155 @@ bool DatabaseManager::updateBalance(const QString& cardId, double amount) {
     // 提交事务
     return m_db.commit();
 }
+
+// 根据学号获取卡号
+QString DatabaseManager::getCardIdByStudentId(const QString& studentId) {
+    QString queryStr = QString("SELECT card_id FROM users WHERE student_id = '%1'").arg(studentId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("card_id").toString();
+    }
+    return "";
+}
+
+// 根据卡号获取学号
+QString DatabaseManager::getStudentIdByCardId(const QString& cardId) {
+    QString queryStr = QString("SELECT student_id FROM users WHERE card_id = '%1'").arg(cardId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("student_id").toString();
+    }
+    return "";
+}
+
+// 根据学号获取姓名
+QString DatabaseManager::getNameByStudentId(const QString& studentId) {
+    QString queryStr = QString("SELECT name FROM users WHERE student_id = '%1'").arg(studentId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("name").toString();
+    }
+    return "";
+}
+
+
+// 根据卡号获取姓名
+QString DatabaseManager::getNameByCardId(const QString& cardId) {
+    QString queryStr = QString("SELECT name FROM users WHERE card_id = '%1'").arg(cardId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("name").toString();
+    }
+    return "";
+}
+
+// 根据学号获取余额（字符串形式）
+QString DatabaseManager::getBalanceByStudentId(const QString& studentId) {
+    QString queryStr = QString("SELECT balance FROM users WHERE student_id = '%1'").arg(studentId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return QString::number(query.value("balance").toDouble(), 'f', 2);
+    }
+    return "0.00";
+}
+
+// 根据卡号获取余额（字符串形式）
+QString DatabaseManager::getBalanceByCardId(const QString& cardId) {
+    QString queryStr = QString("SELECT balance FROM users WHERE card_id = '%1'").arg(cardId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return QString::number(query.value("balance").toDouble(), 'f', 2);
+    }
+    return "0.00";
+}
+
+// 根据管理员ID获取姓名
+QString DatabaseManager::getAdminNameById(const QString& adminId) {
+    QString queryStr = QString("SELECT name FROM administrators WHERE admin_id = '%1'").arg(adminId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("name").toString();
+    }
+    return "";
+}
+
+// 获取最近一次余额变动类型
+QString DatabaseManager::getLastBalanceChangeType(const QString& cardId) {
+    QString queryStr = QString("SELECT change_type FROM balance_change "
+                              "WHERE card_id = '%1' ORDER BY date DESC LIMIT 1").arg(cardId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("change_type").toString();
+    }
+    return "无记录";
+}
+
+// 获取最近一次余额变动金额
+QString DatabaseManager::getLastBalanceChangeAmount(const QString& cardId) {
+    QString queryStr = QString("SELECT amount FROM balance_change "
+                              "WHERE card_id = '%1' ORDER BY date DESC LIMIT 1").arg(cardId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return QString::number(query.value("amount").toDouble(), 'f', 2);
+    }
+    return "0.00";
+}
+
+// 获取最近一次余额变动时间
+QString DatabaseManager::getLastBalanceChangeTime(const QString& cardId) {
+    QString queryStr = QString("SELECT date FROM balance_change "
+                              "WHERE card_id = '%1' ORDER BY date DESC LIMIT 1").arg(cardId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("date").toString();
+    }
+    return "无记录";
+}
+
+// 获取用户总数
+QString DatabaseManager::getTotalUserCount() {
+    QSqlQuery query = executeQuery("SELECT COUNT(*) FROM users");
+    if (query.next()) {
+        return query.value(0).toString();
+    }
+    return "0";
+}
+
+// 获取总余额
+QString DatabaseManager::getTotalBalance() {
+    QSqlQuery query = executeQuery("SELECT SUM(balance) FROM users");
+    if (query.next()) {
+        return QString::number(query.value(0).toDouble(), 'f', 2);
+    }
+    return "0.00";
+}
+
+QString DatabaseManager::getusr_password(const QString &studentId) {
+    QString queryStr = QString("SELECT password FROM users WHERE student_id = '%1'").arg(studentId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("password").toString();
+    }
+    return "";
+}
+QString DatabaseManager::getadmin_password(const QString &adminId) {
+    QString queryStr = QString("SELECT password FROM administrators WHERE admin_id = '%1'").arg(adminId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("password").toString();
+    }
+    return "";
+}
+

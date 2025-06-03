@@ -34,7 +34,20 @@ public:
     QSqlQuery queryBalanceChanges(const QString& cardId);
     QSqlQuery getAdminInfo(const QString& admin_id);
 
-
+    QString getCardIdByStudentId(const QString& studentId);
+    QString getStudentIdByCardId(const QString& cardId);
+    QString getNameByStudentId(const QString& studentId);
+    QString getNameByCardId(const QString& cardId);
+    QString getBalanceByStudentId(const QString& studentId);
+  QString getBalanceByCardId(const QString& cardId);
+    QString getAdminNameById(const QString& adminId);
+    QString getLastBalanceChangeType(const QString& cardId);
+    QString getLastBalanceChangeAmount(const QString& cardId);
+    QString getLastBalanceChangeTime(const QString& cardId);
+    QString getTotalUserCount();
+    QString getTotalBalance();
+    QString getusr_password(const QString &studentId);
+    QString getadmin_password(const QString &adminId);
 private:
     DatabaseManager(const QString& path); // 私有构造函数
     QSqlDatabase m_db;
