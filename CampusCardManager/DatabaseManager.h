@@ -25,9 +25,11 @@ public:
     QSqlQuery getUserByCardId(const QString& cardId);
     bool updateBalance(const QString& cardId, double amount);
 
-    //完善查改
+//完善查改
     QSqlQuery getUserInfoAsUser(const QString& studentId);
     bool modifyUserSelf(const QString& studentId, const QString& newName, const QString& newPassword);
+
+    bool modifyadminSelf(const QString& adminId, const QString& newPassword);
     QSqlQuery getUserInfoAsAdmin(const QString& studentId);
     bool modifyUserAsAdmin(const QString& studentId, const QString& name, const QString& cardId, const QString& password, double balance);
     bool insertBalanceChange(const QString& cardId, const QString& changeType, double amount);
@@ -40,6 +42,9 @@ public:
     QString getNameByCardId(const QString& cardId);
     QString getBalanceByStudentId(const QString& studentId);
   QString getBalanceByCardId(const QString& cardId);
+  QString getpasswordByStudentId(const QString& studentId);
+QString register_error(const QString& studentId, const QString& name, const QString& cardId, const QString& password);
+
     QString getAdminNameById(const QString& adminId);
     QString getLastBalanceChangeType(const QString& cardId);
     QString getLastBalanceChangeAmount(const QString& cardId);

@@ -89,6 +89,12 @@ bool DatabaseManager::modifyUserSelf(const QString& studentId, const QString& ne
     return executeQuery(queryStr).lastError().type() == QSqlError::NoError;
 }
 
+//修改管理员自己密码
+bool DatabaseManager::modifyadminSelf(const QString& adminId, const QString& newPassword) {
+    QString queryStr = QString("UPDATE administrators SET  password = '%1' WHERE admin_id = '%2'")
+    .arg( newPassword, adminId);
+    return executeQuery(queryStr).lastError().type() == QSqlError::NoError;
+}
 //管理员查询
 QSqlQuery DatabaseManager::getUserInfoAsAdmin(const QString& studentId) {
     QString queryStr = QString("SELECT * FROM users WHERE student_id = '%1'").arg(studentId);
@@ -237,6 +243,17 @@ QString DatabaseManager::getBalanceByStudentId(const QString& studentId) {
     return "0.00";
 }
 
+//根据学号获取密码
+QString DatabaseManager::getpasswordByStudentId(const QString& studentId) {
+    QString queryStr = QString("SELECT password FROM users WHERE student_id = '%1'").arg(studentId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.next()) {
+        return query.value("password").toString();
+    }
+    return "";
+}
+
 // 根据卡号获取余额（字符串形式）
 QString DatabaseManager::getBalanceByCardId(const QString& cardId) {
     QString queryStr = QString("SELECT balance FROM users WHERE card_id = '%1'").arg(cardId);
@@ -248,6 +265,18 @@ QString DatabaseManager::getBalanceByCardId(const QString& cardId) {
     return "0.00";
 }
 
+QString DatabaseManager::register_error(const QString& studentId, const QString& name, const QString& cardId, const QString& password)
+ {
+     if(getCardIdByStudentId(studentId)==cardId){
+    return "卡号重复";}
+
+     if(getNameByStudentId( studentId)==name){
+    return "姓名重复";
+  }
+     if(getpasswordByStudentId(studentId)==password){
+    return "密码重复";
+  }
+}
 // 根据管理员ID获取姓名
 QString DatabaseManager::getAdminNameById(const QString& adminId) {
     QString queryStr = QString("SELECT name FROM administrators WHERE admin_id = '%1'").arg(adminId);
@@ -313,6 +342,7 @@ QString DatabaseManager::getTotalBalance() {
     return "0.00";
 }
 
+//获取用户密码
 QString DatabaseManager::getusr_password(const QString &studentId) {
     QString queryStr = QString("SELECT password FROM users WHERE student_id = '%1'").arg(studentId);
     QSqlQuery query = executeQuery(queryStr);
@@ -322,6 +352,7 @@ QString DatabaseManager::getusr_password(const QString &studentId) {
     }
     return "";
 }
+//获取管理员密码
 QString DatabaseManager::getadmin_password(const QString &adminId) {
     QString queryStr = QString("SELECT password FROM administrators WHERE admin_id = '%1'").arg(adminId);
     QSqlQuery query = executeQuery(queryStr);

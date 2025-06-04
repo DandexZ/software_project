@@ -38,10 +38,17 @@ int main(int argc, char *argv[])
     // 添加用户
     if (DatabaseManager::instance().addUser("20230101", "Alice", "CARD123", "pwd123")) {
         qDebug() << "Add user success.";
+        // qDebug() << DatabaseManager::instance().register_error("20230101", "Alice", "CARD123", "pwd123");
     } else {
         qDebug() << "Add user failed.";
     }
-
+    if (DatabaseManager::instance().addUser("20230101", "Alice", "CARD123", "pwd123")) {
+        qDebug() << "Add user success.";
+        // qDebug() << DatabaseManager::instance().register_error("20230101", "Alice", "CARD123", "pwd123");
+    } else {
+        qDebug() << "Add user failed.";
+        qDebug() << DatabaseManager::instance().register_error("20230101", "Alice", "CARD123", "pwd123");
+    }
     // 查询用户
     QSqlQuery result = DatabaseManager::instance().getUserByCardId("CARD123");
     if (result.next()) {
