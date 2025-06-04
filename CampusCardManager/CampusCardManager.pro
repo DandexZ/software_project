@@ -15,17 +15,20 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     manager.cpp \
+    show_user.cpp \
     usrwindow.cpp
 
 HEADERS += \
     DatabaseManager.h \
     mainwindow.h \
     manager.h \
+    show_user.h \
     usrwindow.h
 
 FORMS += \
     mainwindow.ui \
     manager.ui \
+    show_user.ui \
     usrwindow.ui
 
 # Default rules for deployment.

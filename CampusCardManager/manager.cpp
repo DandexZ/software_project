@@ -3,13 +3,10 @@
 #include <QInputDialog>
 #include<QMessageBox>
 
-Manager::Manager(QWidget *parent,QString &db_path) :
+Manager::Manager(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Manager),
-    m_dbManager(DatabaseManager::instance(db_path))
-
+    ui(new Ui::Manager)
 {
-    dbpath=db_path;
     ui->setupUi(this);
 //    ui->nameMessage->setText(name);//从数据库中选取信息输出 姓名、学号、余额
 //    ui->numberMessage->setText(number);

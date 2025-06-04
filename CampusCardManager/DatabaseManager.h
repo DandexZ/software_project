@@ -53,6 +53,7 @@ QString register_error(const QString& studentId, const QString& name, const QStr
     QString getTotalBalance();
     QString getusr_password(const QString &studentId);
     QString getadmin_password(const QString &adminId);
+
 private:
     DatabaseManager(const QString& path); // 私有构造函数
     QSqlDatabase m_db;

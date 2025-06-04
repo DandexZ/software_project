@@ -6,44 +6,117 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>726</width>
-    <height>411</height>
+    <width>760</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="SearchTransactions">
+  <widget class="QLabel" name="name">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>290</y>
-     <width>111</width>
+     <x>460</x>
+     <y>160</y>
+     <width>51</width>
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 9pt &quot;方正姚体&quot;;</string>
+   </property>
    <property name="text">
-    <string>修改用户信息</string>
+    <string>姓名</string>
    </property>
   </widget>
-  <widget class="QLabel" name="hint">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>80</y>
-     <width>421</width>
+     <x>460</x>
+     <y>100</y>
+     <width>211</width>
      <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 12pt &quot;楷体&quot;;</string>
+   </property>
    <property name="text">
-    <string>尊敬的管理员，您的信息如下所示：</string>
+    <string>您的信息如下所示：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="moneyMessage">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>240</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nameMessage">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>160</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="money">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>240</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 9pt &quot;方正姚体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>余额</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_image">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>390</width>
+     <height>520</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="ChangePassword">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>290</y>
+     <x>620</x>
+     <y>330</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -52,51 +125,69 @@
     <string>修改密码</string>
    </property>
   </widget>
-  <widget class="QSplitter" name="splitter">
+  <widget class="QLabel" name="number">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>160</y>
-     <width>271</width>
+     <x>460</x>
+     <y>200</y>
+     <width>51</width>
      <height>41</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+   <property name="styleSheet">
+    <string notr="true">font: 9pt &quot;方正姚体&quot;;</string>
    </property>
-   <widget class="QLabel" name="name">
-    <property name="text">
-     <string>姓名</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="nameMessage">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
+   <property name="text">
+    <string>学号</string>
+   </property>
   </widget>
-  <widget class="QSplitter" name="splitter_2">
+  <widget class="QLabel" name="numberMessage">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>510</x>
      <y>200</y>
-     <width>271</width>
-     <height>31</height>
+     <width>201</width>
+     <height>41</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(247, 247, 247);
+border:1px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 10pt &quot;Candara&quot;;</string>
    </property>
-   <widget class="QLabel" name="number">
-    <property name="text">
-     <string>ID</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="numberMessage">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hint">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>0</y>
+     <width>271</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;楷体&quot;;</string>
+   </property>
+   <property name="text">
+    <string>尊敬的用户:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SearchTransactions">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>330</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>查询流水</string>
+   </property>
   </widget>
  </widget>
  <resources/>

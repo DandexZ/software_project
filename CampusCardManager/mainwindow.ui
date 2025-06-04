@@ -20,10 +20,10 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>360</y>
-      <width>101</width>
-      <height>41</height>
+      <x>120</x>
+      <y>350</y>
+      <width>111</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -199,74 +199,6 @@ font: 10pt &quot;Candara&quot;;</string>
     </property>
     <property name="text">
      <string>登录界面</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>360</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    /* 木质纹理底色，与课桌颜色协调 */
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
-        stop:0 #d4a762,  /* 浅木色 */
-        stop:0.5 #b78a4a,  /* 中等木色 */
-        stop:1 #9c6e32);  /* 深木色 */
-    
-    /* 添加微妙的阳光照射效果 */
-    border-top: 1px solid rgba(255, 236, 179, 0.7);
-    border-left: 1px solid rgba(255, 236, 179, 0.5);
-    
-    /* 文字样式 - 类似黑板粉笔字 */
-    color: #f5f5f5;
-    font: bold 14pt &quot;Segoe UI&quot;, sans-serif;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    
-    /* 边框和圆角 - 类似教室告示牌 */
-    border-radius: 8px;
-    border-bottom: 2px solid #7a5c32;
-    border-right: 2px solid #7a5c32;
-    padding: 6px 12px;
-    
-    /* 投影效果 - 类似阳光下的阴影 */
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-/* 悬停效果 - 类似阳光增强 */
-QPushButton:hover {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
-        stop:0 #e0b97e,
-        stop:0.5 #c99d62,
-        stop:1 #af8146);
-    border-top-color: rgba(255, 246, 195, 0.9);
-}
-
-/* 按下效果 - 类似黑板按压感 */
-QPushButton:pressed {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
-        stop:0 #9c6e32,
-        stop:0.5 #8a612b,
-        stop:1 #785424);
-    border-bottom-color: #5d4525;
-    border-right-color: #5d4525;
-    padding-top: 7px;
-    padding-left: 13px;
-}
-
-/* 禁用状态 - 类似褪色的告示 */
-QPushButton:disabled {
-    background-color: #e5d8c0;
-    color: #aaaaaa;
-    border: 1px solid #cccccc;
-}</string>
-    </property>
-    <property name="text">
-     <string>注册</string>
     </property>
    </widget>
   </widget>
