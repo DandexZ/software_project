@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     QString dbPath = getDatabasePath();
-    MainWindow w(nullptr,dbPath);
+    MainWindow w;
 
     qDebug() << "数据库路径为 "<< dbPath;
     DatabaseManager::instance(dbPath);

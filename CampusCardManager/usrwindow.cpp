@@ -1,15 +1,16 @@
 #include "usrwindow.h"
 #include "ui_usrwindow.h"
+
+#include "show_user.h"
+
 #include <QInputDialog>
 #include<QMessageBox>
 #include<QGraphicsDropShadowEffect>
 
-UsrWindow::UsrWindow(QWidget *parent,QString &db_path) :
+UsrWindow::UsrWindow(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::UsrWindow),
-    m_dbManager(DatabaseManager::instance(db_path))
+    ui(new Ui::UsrWindow)
 {
-    dbpath=db_path;
     ui->setupUi(this);
 //    ui->nameMessage->setText(name);//从数据库中选取信息输出 姓名、学号、余额
 //    ui->numberMessage->setText(number);
@@ -39,6 +40,8 @@ UsrWindow::~UsrWindow()
 void UsrWindow::on_SearchTransactions_clicked()//点击查询流水
 {
     //获取SQLite中的流水信息并输出：弹窗/新窗口
+    show_user* u =new show_user;
+    u->show();
 }
 
 

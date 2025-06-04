@@ -7,12 +7,9 @@
 #include<QMessageBox>
 #include<QGraphicsDropShadowEffect>
 
-MainWindow::MainWindow(QWidget *parent,QString &db_path)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-    ,m_dbManager(DatabaseManager::instance(db_path))
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    dbpath=db_path;
     ui->setupUi(this);
     this->statusBar()->hide();  // 移除状态栏
     connect(ui->input_code, &QLineEdit::returnPressed, ui->pushButton, &QPushButton::click);
@@ -43,7 +40,7 @@ void MainWindow::on_pushButton_clicked()
     QString password = ui->input_code->text();
     qDebug("%s ",qPrintable(usrname));
     qDebug("%s ",qPrintable(password));
-    //zhr end
+
     // 验证输入是否为空 顺便判断是管理员的账号还是学生的账号
     if(usrname.isEmpty() || password.isEmpty()) {
         QMessageBox::warning(this, "警告", "用户名或密码不能为空!");
@@ -51,10 +48,10 @@ void MainWindow::on_pushButton_clicked()
     }
 
 
-   bool loginSuccess1 = false,loginSuccess2 = false;//
+   bool loginSuccess1 = false,loginSuccess2 = false;
     // 查询用户是否存在
-if(password==DatabaseManager::instance().getadmin_password(usrname)){ loginSuccess1 = true;}//学生密码对
-if(password==DatabaseManager::instance().getusr_password(usrname)){ loginSuccess2 = true;}//管理员密码对
+    if(password==DatabaseManager::instance().getadmin_password(usrname)){ loginSuccess1 = true;}//学生密码对
+    if(password==DatabaseManager::instance().getusr_password(usrname)){ loginSuccess2 = true;}//管理员密码对
 
     if(!loginSuccess1 && !loginSuccess2) {//密码错误
         QMessageBox::warning(this, "登录失败", "用户名或密码错误!");
@@ -63,25 +60,19 @@ if(password==DatabaseManager::instance().getusr_password(usrname)){ loginSuccess
         return;
     }
 
-    //role INTEGER
-    //if若用户是学生，获得姓名、学号、金额并传入UsrWinodw
     if(loginSuccess2){
-    UsrWindow *usr = new UsrWindow(nullptr,dbpath);
-    usr->show();  // 显示新窗口
-
-
+        UsrWindow *usr = new UsrWindow(nullptr);
+        usr->show();  // 显示新窗口
+        // 建议设置：当新窗口关闭时自动释放内存
+        usr->setAttribute(Qt::WA_DeleteOnClose);
+    }
+    if(loginSuccess1)
+    {
+        Manager *manager=new Manager(nullptr);
+        manager->show();
+        manager->setAttribute(Qt::WA_DeleteOnClose);
+    }
 
     this->close();       // 关闭登录窗口
-
-    // 建议设置：当新窗口关闭时自动释放内存
-    usr->setAttribute(Qt::WA_DeleteOnClose);
-
 }
 
-    //else若用户是管理员，获得姓名、ID，并传入manager
-  //  else if(loginSuccess2){
-//    Manager* manager= new Manager();
-//    manager->show();
-   //类比学生来写
-   // }
-}
