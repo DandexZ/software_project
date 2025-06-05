@@ -28,7 +28,11 @@ public:
 //完善查改
     QSqlQuery getUserInfoAsUser(const QString& studentId);
     bool modifyUserSelf(const QString& studentId, const QString& newName, const QString& newPassword);
+<<<<<<< HEAD
 
+=======
+bool find_usrid(const QString& studentId);
+>>>>>>> c538fc938fe34d59b67600b13afda9afb8c8b166
     bool modifyadminSelf(const QString& adminId, const QString& newPassword);
     QSqlQuery getUserInfoAsAdmin(const QString& studentId);
     bool modifyUserAsAdmin(const QString& studentId, const QString& name, const QString& cardId, const QString& password, double balance);

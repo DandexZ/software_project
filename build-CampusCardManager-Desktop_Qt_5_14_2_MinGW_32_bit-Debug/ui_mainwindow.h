@@ -38,7 +38,6 @@ public:
     QLabel *label_image;
     QLabel *label_teamname;
     QLabel *label_load;
-    QPushButton *pushButton_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -51,7 +50,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(70, 360, 101, 41));
+        pushButton->setGeometry(QRect(120, 350, 111, 51));
         pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* \346\234\250\350\264\250\347\272\271\347\220\206\345\272\225\350\211\262\357\274\214\344\270\216\350\257\276\346\241\214\351\242\234\350\211\262\345\215\217\350\260\203 */\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,\n"
@@ -166,64 +165,6 @@ public:
         label_load->setStyleSheet(QString::fromUtf8("font: 18pt \"\346\245\267\344\275\223\";\n"
 "\n"
 ""));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(210, 360, 101, 41));
-        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    /* \346\234\250\350\264\250\347\272\271\347\220\206\345\272\225\350\211\262\357\274\214\344\270\216\350\257\276\346\241\214\351\242\234\350\211\262\345\215\217\350\260\203 */\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,\n"
-"        stop:0 #d4a762,  /* \346\265\205\346\234\250\350\211\262 */\n"
-"        stop:0.5 #b78a4a,  /* \344\270\255\347\255\211\346\234\250\350\211\262 */\n"
-"        stop:1 #9c6e32);  /* \346\267\261\346\234\250\350\211\262 */\n"
-"    \n"
-"    /* \346\267\273\345\212\240\345\276\256\345\246\231\347\232\204\351\230\263\345\205\211\347\205\247\345\260\204\346\225\210\346\236\234 */\n"
-"    border-top: 1px solid rgba(255, 236, 179, 0.7);\n"
-"    border-left: 1px solid rgba(255, 236, 179, 0.5);\n"
-"    \n"
-"    /* \346\226\207\345\255\227\346\240\267\345\274\217 - \347\261\273\344\274\274\351\273\221\346\235\277\347\262\211\347\254\224\345\255\227 */\n"
-"    color: #f5f5f5;\n"
-"    font: bold 14pt \"Segoe UI\", sans-serif;\n"
-"    text-shad"
-                        "ow: 1px 1px 2px rgba(0,0,0,0.3);\n"
-"    \n"
-"    /* \350\276\271\346\241\206\345\222\214\345\234\206\350\247\222 - \347\261\273\344\274\274\346\225\231\345\256\244\345\221\212\347\244\272\347\211\214 */\n"
-"    border-radius: 8px;\n"
-"    border-bottom: 2px solid #7a5c32;\n"
-"    border-right: 2px solid #7a5c32;\n"
-"    padding: 6px 12px;\n"
-"    \n"
-"    /* \346\212\225\345\275\261\346\225\210\346\236\234 - \347\261\273\344\274\274\351\230\263\345\205\211\344\270\213\347\232\204\351\230\264\345\275\261 */\n"
-"    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n"
-"}\n"
-"\n"
-"/* \346\202\254\345\201\234\346\225\210\346\236\234 - \347\261\273\344\274\274\351\230\263\345\205\211\345\242\236\345\274\272 */\n"
-"QPushButton:hover {\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,\n"
-"        stop:0 #e0b97e,\n"
-"        stop:0.5 #c99d62,\n"
-"        stop:1 #af8146);\n"
-"    border-top-color: rgba(255, 246, 195, 0.9);\n"
-"}\n"
-"\n"
-"/* \346\214\211\344\270\213\346\225\210\346\236\234 - \347\261"
-                        "\273\344\274\274\351\273\221\346\235\277\346\214\211\345\216\213\346\204\237 */\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,\n"
-"        stop:0 #9c6e32,\n"
-"        stop:0.5 #8a612b,\n"
-"        stop:1 #785424);\n"
-"    border-bottom-color: #5d4525;\n"
-"    border-right-color: #5d4525;\n"
-"    padding-top: 7px;\n"
-"    padding-left: 13px;\n"
-"}\n"
-"\n"
-"/* \347\246\201\347\224\250\347\212\266\346\200\201 - \347\261\273\344\274\274\350\244\252\350\211\262\347\232\204\345\221\212\347\244\272 */\n"
-"QPushButton:disabled {\n"
-"    background-color: #e5d8c0;\n"
-"    color: #aaaaaa;\n"
-"    border: 1px solid #cccccc;\n"
-"}"));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -246,7 +187,6 @@ public:
         label_image->setText(QString());
         label_teamname->setText(QCoreApplication::translate("MainWindow", "By AAA\347\224\265\350\204\221\347\273\264\344\277\256", nullptr));
         label_load->setText(QCoreApplication::translate("MainWindow", "\347\231\273\345\275\225\347\225\214\351\235\242", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\346\263\250\345\206\214", nullptr));
     } // retranslateUi
 
 };

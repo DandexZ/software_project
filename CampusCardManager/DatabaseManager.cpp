@@ -80,6 +80,13 @@ QSqlQuery DatabaseManager::executeQuery(const QString& queryStr) {
 QSqlQuery DatabaseManager::getUserInfoAsUser(const QString& studentId) {
     QString queryStr = QString("SELECT * FROM users WHERE student_id = '%1'").arg(studentId);
     return executeQuery(queryStr);
+
+}
+
+bool DatabaseManager::find_usrid(const QString& studentId) {
+    QString queryStr = QString("SELECT * FROM users WHERE student_id = '%1'").arg(studentId);
+    return executeQuery(queryStr).lastError().type() == QSqlError::NoError;
+
 }
 
 //用户更改自己
@@ -264,7 +271,16 @@ QString DatabaseManager::getBalanceByCardId(const QString& cardId) {
     }
     return "0.00";
 }
+//注册信息错误
+QString DatabaseManager::register_error(const QString& studentId, const QString& name, const QString& cardId, const QString& password)
+ {
+    if(DatabaseManager::instance().find_usrid(studentId)){
+        return "学号重复";
+    }
+     if(DatabaseManager::instance().getCardIdByStudentId(studentId)==cardId){
+    return "卡号重复";}
 
+<<<<<<< HEAD
 QString DatabaseManager::register_error(const QString& studentId, const QString& name_id, const QString& cardId, const QString& password)
  {
      if(getCardIdByStudentId(studentId)==cardId){
@@ -278,6 +294,17 @@ QString DatabaseManager::register_error(const QString& studentId, const QString&
   }
 }
 
+=======
+     if(DatabaseManager::instance().getNameByStudentId( studentId)==name){
+    return "姓名重复";
+  }
+
+     if(DatabaseManager::instance().getpasswordByStudentId(studentId)==password){
+    return "密码重复";
+  }
+     else return "";
+}
+>>>>>>> c538fc938fe34d59b67600b13afda9afb8c8b166
 // 根据管理员ID获取姓名
 QString DatabaseManager::getAdminNameById(const QString& adminId) {
     QString queryStr = QString("SELECT name FROM administrators WHERE admin_id = '%1'").arg(adminId);
