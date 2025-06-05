@@ -42,8 +42,8 @@ void MainWindow::on_pushButton_clicked()
     qDebug("%s ",qPrintable(password));
 
    // QString test11=  DatabaseManager::instance().register_error(usrname,DatabaseManager::instance().getNameByStudentId(usrname),DatabaseManager::instance().getCardIdByStudentId(usrname),DatabaseManager::instance().getusr_password(usrname));
-    QString test11=  DatabaseManager::instance().register_error((const QString &)usrname," "," "," ");
-    qDebug()<<test11;
+    //QString test11=  DatabaseManager::instance().register_error((const QString &)usrname," "," "," ");
+    //qDebug()<<test11;
     // 验证输入是否为空 顺便判断是管理员的账号还是学生的账号
     if(usrname.isEmpty() || password.isEmpty())
     {

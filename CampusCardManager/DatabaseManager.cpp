@@ -280,21 +280,6 @@ QString DatabaseManager::register_error(const QString& studentId, const QString&
      if(DatabaseManager::instance().getCardIdByStudentId(studentId)==cardId){
     return "卡号重复";}
 
-<<<<<<< HEAD
-QString DatabaseManager::register_error(const QString& studentId, const QString& name_id, const QString& cardId, const QString& password)
- {
-     if(getCardIdByStudentId(studentId)==cardId){
-    return "卡号重复";}
-
-     if(getNameByStudentId(studentId)==name_id){
-    return "学号重复";
-  }
-     if(getpasswordByStudentId(studentId)==password){
-    return "密码重复";
-  }
-}
-
-=======
      if(DatabaseManager::instance().getNameByStudentId( studentId)==name){
     return "姓名重复";
   }
@@ -304,7 +289,6 @@ QString DatabaseManager::register_error(const QString& studentId, const QString&
   }
      else return "";
 }
->>>>>>> c538fc938fe34d59b67600b13afda9afb8c8b166
 // 根据管理员ID获取姓名
 QString DatabaseManager::getAdminNameById(const QString& adminId) {
     QString queryStr = QString("SELECT name FROM administrators WHERE admin_id = '%1'").arg(adminId);
