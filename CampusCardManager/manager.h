@@ -27,6 +27,10 @@ private slots:
 
     void on_update_money_clicked();
 
+    void on_userdb_clicked();
+
+    void on_moneydb_clicked();
+
 private:
     Ui::Manager *ui;
     QString username;

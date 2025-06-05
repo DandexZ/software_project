@@ -27,6 +27,8 @@ public:
     QPushButton *update_money;
     QPushButton *destroy_user;
     QLabel *name_label;
+    QPushButton *userdb;
+    QPushButton *moneydb;
 
     void setupUi(QWidget *Manager)
     {
@@ -57,6 +59,12 @@ public:
         name_label->setObjectName(QString::fromUtf8("name_label"));
         name_label->setGeometry(QRect(220, 30, 211, 61));
         name_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\245\267\344\275\223\";"));
+        userdb = new QPushButton(Manager);
+        userdb->setObjectName(QString::fromUtf8("userdb"));
+        userdb->setGeometry(QRect(180, 350, 141, 51));
+        moneydb = new QPushButton(Manager);
+        moneydb->setObjectName(QString::fromUtf8("moneydb"));
+        moneydb->setGeometry(QRect(450, 350, 141, 51));
 
         retranslateUi(Manager);
 
@@ -73,6 +81,8 @@ public:
         update_money->setText(QCoreApplication::translate("Manager", "\344\277\256\346\224\271\344\275\231\351\242\235", nullptr));
         destroy_user->setText(QCoreApplication::translate("Manager", "\346\263\250\351\224\200\347\224\250\346\210\267", nullptr));
         name_label->setText(QString());
+        userdb->setText(QCoreApplication::translate("Manager", "\346\237\245\350\257\242\347\224\250\346\210\267\346\225\260\346\215\256\345\272\223", nullptr));
+        moneydb->setText(QCoreApplication::translate("Manager", "\346\237\245\350\257\242\346\265\201\346\260\264\346\225\260\346\215\256\345\272\223", nullptr));
     } // retranslateUi
 
 };

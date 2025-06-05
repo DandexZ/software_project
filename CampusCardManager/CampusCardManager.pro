@@ -16,6 +16,7 @@ SOURCES += \
     mainwindow.cpp \
     manager.cpp \
     new_user.cpp \
+    show_money.cpp \
     show_user.cpp \
     usrwindow.cpp
 
@@ -24,6 +25,7 @@ HEADERS += \
     mainwindow.h \
     manager.h \
     new_user.h \
+    show_money.h \
     show_user.h \
     usrwindow.h
 
@@ -31,6 +33,7 @@ FORMS += \
     mainwindow.ui \
     manager.ui \
     new_user.ui \
+    show_money.ui \
     show_user.ui \
     usrwindow.ui
 

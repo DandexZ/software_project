@@ -113,6 +113,32 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="userdb">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>350</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>查询用户数据库</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="moneydb">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>350</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>查询流水数据库</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

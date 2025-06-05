@@ -31,31 +31,31 @@ void new_user::on_sureButton_clicked()
         return;
     }
 
-//    if(DatabaseManager::instance().register_error(Usernumber,Usernumber,Usercard,code1)=="卡号重复")
-//    {
-//        QMessageBox::warning(this, "注册失败", "已存在输入的卡号!");
-//        ui->card->clear();
-//        ui->card->setFocus();
-//        return;
-//    }
-//    else if(DatabaseManager::instance().register_error(Usernumber,Usernumber,Usercard,code1)=="学号重复" )
-//    {
-//        QMessageBox::warning(this, "注册失败", "已存在输入的学号!");
-//        ui->number->clear();
-//        ui->number->setFocus();
-//        return;
-//    }
-//    else if(DatabaseManager::instance().register_error(Usernumber,Usernumber,Usercard,code1)=="密码重复")
-//    {
-//        QMessageBox::warning(this, "注册失败", "已存在输入的密码!");
-//        ui->code->clear();
-//        ui->code->setFocus();
-//        return;
-//    }
-    //else
-    //{
+    if(DatabaseManager::instance().register_error(Usernumber,Username,Usercard,code1)=="卡号重复")
+    {
+        QMessageBox::warning(this, "注册失败", "已存在输入的卡号!");
+        ui->card->clear();
+        ui->card->setFocus();
+        return;
+    }
+    else if(DatabaseManager::instance().register_error(Usernumber,Username,Usercard,code1)=="学号重复" )
+    {
+        QMessageBox::warning(this, "注册失败", "已存在输入的学号!");
+        ui->number->clear();
+        ui->number->setFocus();
+        return;
+    }
+    else if(DatabaseManager::instance().register_error(Usernumber,Username,Usercard,code1)=="密码重复")
+    {
+        QMessageBox::warning(this, "注册失败", "已存在输入的密码!");
+        ui->code->clear();
+        ui->code->setFocus();
+        return;
+    }
+    else
+    {
         success = DatabaseManager::instance().addUser(Usernumber, Username, Usercard, code1);
-    //}
+    }
 
     if(success)
     {

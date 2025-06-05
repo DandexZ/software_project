@@ -1,6 +1,8 @@
 #include "manager.h"
 #include "ui_manager.h"
 #include "new_user.h"
+#include "show_user.h"
+#include "show_money.h"
 #include <QInputDialog>
 #include<QMessageBox>
 
@@ -72,7 +74,7 @@ void Manager::on_ChangePassword_clicked()
       if(success)
       {
           QMessageBox::information(this, "修改成功", "用户修改成功！");
-          this->close(); // 关闭注册窗口（可选）
+          //this->close(); // 关闭注册窗口（可选）
       }
       else
       {
@@ -108,7 +110,7 @@ void Manager::on_destroy_user_clicked()
       if(success)
       {
           QMessageBox::information(this, "注销成功", "用户注销成功！");
-          this->close(); // 关闭注册窗口（可选）
+          //this->close(); // 关闭注册窗口（可选）
       }
       else
       {
@@ -152,11 +154,23 @@ void Manager::on_update_money_clicked()
     if(success)
     {
         QMessageBox::information(this, "更新成功", "用户更新成功！");
-        this->close(); // 关闭注册窗口（可选）
+        //this->close(); // 关闭注册窗口（可选）
     }
     else
     {
         QMessageBox::warning(this, "更新失败", "数据库更新失败，请重试！");
     }
 
+}
+
+void Manager::on_userdb_clicked()
+{
+    show_user* u =new show_user;
+    u->show();
+}
+
+void Manager::on_moneydb_clicked()
+{
+    show_money* u=new show_money;
+    u->show();
 }
