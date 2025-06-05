@@ -47,6 +47,8 @@ void UsrWindow::on_SearchTransactions_clicked()//点击查询流水
 
 void UsrWindow::on_ChangePassword_clicked() //点击修改密码
 {
+
+
         // 1. 获取并确认新密码
         QString newPassword = QInputDialog::getText(
             this,
