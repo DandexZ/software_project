@@ -1,15 +1,15 @@
 #include "manager.h"
 #include "ui_manager.h"
+#include "new_user.h"
 #include <QInputDialog>
 #include<QMessageBox>
 
-Manager::Manager(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Manager)
+Manager::Manager(QWidget *parent,QString usrname) :
+    QWidget(parent),ui(new Ui::Manager),username(usrname)
 {
     ui->setupUi(this);
-//    ui->nameMessage->setText(name);//从数据库中选取信息输出 姓名、学号、余额
-//    ui->numberMessage->setText(number);
+    QString name = DatabaseManager::instance().getAdminNameById(usrname);
+    ui->name_label->setText(name);
 }
 
 Manager::~Manager()
@@ -17,36 +17,146 @@ Manager::~Manager()
     delete ui;
 }
 
-void Manager::on_SearchTransactions_clicked()
-{
-
-}
-
 void Manager::on_ChangePassword_clicked()
 {
+    // 1. 弹出输入对话框获取旧密码、新密码和确认密码
+      bool ok;
+      QString oldPassword = QInputDialog::getText(
+          this,
+          "修改密码",
+          "请输入旧密码：",
+          QLineEdit::Password,
+          "",
+          &ok
+      );
 
-        // 1. 获取并确认新密码
-        QString newPassword = QInputDialog::getText(
-            this,
-            "修改密码",
-            "请输入新密码：",
-            QLineEdit::Password
-        );
-        if (newPassword.isEmpty()) return;
+      if (!ok || oldPassword.isEmpty()) {
+          return;  // 用户取消或未输入
+      }
 
-        QString confirmPassword = QInputDialog::getText(
-            this,
-            "修改密码",
-            "请再次输入新密码：",
-            QLineEdit::Password
-        );
-        if (newPassword != confirmPassword) {
-            QMessageBox::warning(this, "错误", "两次输入的密码不一致！");
-            return;
-        }
+      QString newPassword = QInputDialog::getText(
+          this,
+          "修改密码",
+          "请输入新密码：",
+          QLineEdit::Password,
+          "",
+          &ok
+      );
 
-        if (newPassword.length() < 6) {
-            QMessageBox::warning(this, "错误", "密码长度至少6位！");
-            return;
-        }
+      if (!ok || newPassword.isEmpty()) {
+          return;
+      }
+
+      QString confirmPassword = QInputDialog::getText(
+          this,
+          "修改密码",
+          "请再次输入新密码：",
+          QLineEdit::Password,
+          "",
+          &ok
+      );
+
+      if (!ok || confirmPassword.isEmpty()) {
+          return;
+      }
+
+      // 2. 检查两次输入的新密码是否一致
+      if (newPassword != confirmPassword) {
+          QMessageBox::warning(this, "错误", "两次输入的新密码不一致！");
+          return;
+      }
+
+      //数据库修改密码的操作
+      bool success = DatabaseManager::instance().modifyadminSelf(username,newPassword);
+
+      if(success)
+      {
+          QMessageBox::information(this, "修改成功", "用户修改成功！");
+          this->close(); // 关闭注册窗口（可选）
+      }
+      else
+      {
+          QMessageBox::warning(this, "修改失败", "数据库修改失败，请重试！");
+      }
+}
+
+void Manager::on_Sign_up_clicked()
+{
+    new_user *u = new new_user;
+    u->show();
+}
+
+void Manager::on_destroy_user_clicked()
+{
+      bool ok;
+      QString Id = QInputDialog::getText(
+          this,
+          "注销用户",
+          "请输入待注销用户的学号：",
+          QLineEdit::Normal,
+          "",
+          &ok
+      );
+
+      if (!ok || Id.isEmpty()) {
+          return;  // 用户取消或未输入
+      }
+
+      QString cardid = DatabaseManager::instance().getCardIdByStudentId(Id);
+      bool success = DatabaseManager::instance().deleteUser(cardid);
+
+      if(success)
+      {
+          QMessageBox::information(this, "注销成功", "用户注销成功！");
+          this->close(); // 关闭注册窗口（可选）
+      }
+      else
+      {
+          QMessageBox::warning(this, "注销失败", "数据库删除失败，请重试！");
+      }
+}
+
+void Manager::on_update_money_clicked()
+{
+    bool ok;
+    QString update_id = QInputDialog::getText(
+        this,
+        "修改余额",
+        "请输入待修改的用户的学号",
+        QLineEdit::Normal,
+        "",
+        &ok
+    );
+
+    if (!ok || update_id.isEmpty()) {
+        return;  // 用户取消或未输入
+    }
+
+    QString update_money = QInputDialog::getText(
+        this,
+        "修改余额",
+        "请输入待修改的用户的余额",
+        QLineEdit::Normal,
+        "",
+        &ok
+    );
+
+    if (!ok || update_money.isEmpty()) {
+        return;  // 用户取消或未输入
+    }
+
+    QString cardid = DatabaseManager::instance().getCardIdByStudentId(update_id);
+    double money = update_money.toDouble();
+    bool success = DatabaseManager::instance().updateBalance(cardid,money);
+
+    if(success)
+    {
+        QMessageBox::information(this, "更新成功", "用户更新成功！");
+        this->close(); // 关闭注册窗口（可选）
+    }
+    else
+    {
+        QMessageBox::warning(this, "更新失败", "数据库更新失败，请重试！");
+    }
+
 }

@@ -13,17 +13,23 @@ class Manager : public QWidget
     Q_OBJECT
 
 public:
-    Manager(QWidget *parent ,QString &db_path);
+    Manager(QWidget *parent ,QString usrname);
     explicit Manager(QWidget *parent = nullptr);
     ~Manager();
 
 private slots:
-    void on_SearchTransactions_clicked();
 
     void on_ChangePassword_clicked();
 
+    void on_Sign_up_clicked();
+
+    void on_destroy_user_clicked();
+
+    void on_update_money_clicked();
+
 private:
     Ui::Manager *ui;
+    QString username;
 };
 
 #endif // MANAGER_H

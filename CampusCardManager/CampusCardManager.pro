@@ -15,6 +15,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     manager.cpp \
+    new_user.cpp \
     show_user.cpp \
     usrwindow.cpp
 
@@ -22,12 +23,14 @@ HEADERS += \
     DatabaseManager.h \
     mainwindow.h \
     manager.h \
+    new_user.h \
     show_user.h \
     usrwindow.h
 
 FORMS += \
     mainwindow.ui \
     manager.ui \
+    new_user.ui \
     show_user.ui \
     usrwindow.ui
 

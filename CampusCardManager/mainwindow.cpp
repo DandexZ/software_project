@@ -42,7 +42,8 @@ void MainWindow::on_pushButton_clicked()
     qDebug("%s ",qPrintable(password));
 
     // 验证输入是否为空 顺便判断是管理员的账号还是学生的账号
-    if(usrname.isEmpty() || password.isEmpty()) {
+    if(usrname.isEmpty() || password.isEmpty())
+    {
         QMessageBox::warning(this, "警告", "用户名或密码不能为空!");
         return;
     }
@@ -68,7 +69,7 @@ void MainWindow::on_pushButton_clicked()
     }
     if(loginSuccess1)
     {
-        Manager *manager=new Manager(nullptr);
+        Manager *manager=new Manager(nullptr,usrname);
         manager->show();
         manager->setAttribute(Qt::WA_DeleteOnClose);
     }
