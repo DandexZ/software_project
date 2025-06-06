@@ -13,6 +13,14 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">/* 主窗口样式 */
+QWidget {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+}</string>
+  </property>
   <widget class="QLabel" name="hint_2">
    <property name="geometry">
     <rect>
@@ -32,11 +40,34 @@
   <widget class="QPushButton" name="ChangePassword">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>410</y>
-     <width>141</width>
+     <x>150</x>
+     <y>400</y>
+     <width>150</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
    </property>
    <property name="text">
     <string>修改密码</string>
@@ -61,11 +92,34 @@
   <widget class="QPushButton" name="Sign_up">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>290</y>
-     <width>141</width>
+     <x>70</x>
+     <y>210</y>
+     <width>150</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
    </property>
    <property name="text">
     <string>注册用户</string>
@@ -74,11 +128,34 @@
   <widget class="QPushButton" name="increase_money">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>290</y>
-     <width>141</width>
+     <x>230</x>
+     <y>210</y>
+     <width>150</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
    </property>
    <property name="text">
     <string>充值金额</string>
@@ -87,11 +164,34 @@
   <widget class="QPushButton" name="destroy_user">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>290</y>
-     <width>141</width>
+     <x>70</x>
+     <y>270</y>
+     <width>150</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
    </property>
    <property name="text">
     <string>注销用户</string>
@@ -116,11 +216,34 @@
   <widget class="QPushButton" name="userdb">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>350</y>
-     <width>141</width>
-     <height>51</height>
+     <x>29</x>
+     <y>330</y>
+     <width>191</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
    </property>
    <property name="text">
     <string>查询用户数据库</string>
@@ -129,11 +252,34 @@
   <widget class="QPushButton" name="moneydb">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>350</y>
-     <width>141</width>
-     <height>51</height>
+     <x>230</x>
+     <y>330</y>
+     <width>191</width>
+     <height>61</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
    </property>
    <property name="text">
     <string>查询流水数据库</string>
@@ -142,11 +288,34 @@
   <widget class="QPushButton" name="decrease_money">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>350</y>
-     <width>141</width>
+     <x>230</x>
+     <y>270</y>
+     <width>150</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
    </property>
    <property name="text">
     <string>消费金额</string>
@@ -155,9 +324,9 @@
   <widget class="QLabel" name="label_image">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>430</x>
      <y>0</y>
-     <width>301</width>
+     <width>351</width>
      <height>521</height>
     </rect>
    </property>

@@ -37,42 +37,195 @@ public:
         if (Manager->objectName().isEmpty())
             Manager->setObjectName(QString::fromUtf8("Manager"));
         Manager->resize(780, 520);
+        Manager->setStyleSheet(QString::fromUtf8("/* \344\270\273\347\252\227\345\217\243\346\240\267\345\274\217 */\n"
+"QWidget {\n"
+"    background-color: #f5f7fa;\n"
+"    font-family: 'Segoe UI', Arial, sans-serif;\n"
+"    font-size: 11pt;\n"
+"}"));
         hint_2 = new QLabel(Manager);
         hint_2->setObjectName(QString::fromUtf8("hint_2"));
         hint_2->setGeometry(QRect(70, 110, 221, 61));
         hint_2->setStyleSheet(QString::fromUtf8("font: 12pt \"\346\245\267\344\275\223\";"));
         ChangePassword = new QPushButton(Manager);
         ChangePassword->setObjectName(QString::fromUtf8("ChangePassword"));
-        ChangePassword->setGeometry(QRect(170, 410, 141, 51));
+        ChangePassword->setGeometry(QRect(150, 400, 150, 51));
+        ChangePassword->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\351\200\232\347\224\250\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px 15px;\n"
+"    min-width: 120px;\n"
+"    min-height: 35px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\202\254\345\201\234\346\225\210\346\236\234 */\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\214\211\344\270\213\346\225\210\346\236\234 */\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         hint = new QLabel(Manager);
         hint->setObjectName(QString::fromUtf8("hint"));
         hint->setGeometry(QRect(30, 30, 191, 61));
         hint->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\245\267\344\275\223\";"));
         Sign_up = new QPushButton(Manager);
         Sign_up->setObjectName(QString::fromUtf8("Sign_up"));
-        Sign_up->setGeometry(QRect(20, 290, 141, 51));
+        Sign_up->setGeometry(QRect(70, 210, 150, 51));
+        Sign_up->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\351\200\232\347\224\250\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px 15px;\n"
+"    min-width: 120px;\n"
+"    min-height: 35px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\202\254\345\201\234\346\225\210\346\236\234 */\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\214\211\344\270\213\346\225\210\346\236\234 */\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         increase_money = new QPushButton(Manager);
         increase_money->setObjectName(QString::fromUtf8("increase_money"));
-        increase_money->setGeometry(QRect(320, 290, 141, 51));
+        increase_money->setGeometry(QRect(230, 210, 150, 51));
+        increase_money->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\351\200\232\347\224\250\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px 15px;\n"
+"    min-width: 120px;\n"
+"    min-height: 35px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\202\254\345\201\234\346\225\210\346\236\234 */\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\214\211\344\270\213\346\225\210\346\236\234 */\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         destroy_user = new QPushButton(Manager);
         destroy_user->setObjectName(QString::fromUtf8("destroy_user"));
-        destroy_user->setGeometry(QRect(170, 290, 141, 51));
+        destroy_user->setGeometry(QRect(70, 270, 150, 51));
+        destroy_user->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\351\200\232\347\224\250\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px 15px;\n"
+"    min-width: 120px;\n"
+"    min-height: 35px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\202\254\345\201\234\346\225\210\346\236\234 */\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\214\211\344\270\213\346\225\210\346\236\234 */\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         name_label = new QLabel(Manager);
         name_label->setObjectName(QString::fromUtf8("name_label"));
         name_label->setGeometry(QRect(220, 30, 211, 61));
         name_label->setStyleSheet(QString::fromUtf8("font: 16pt \"\346\245\267\344\275\223\";"));
         userdb = new QPushButton(Manager);
         userdb->setObjectName(QString::fromUtf8("userdb"));
-        userdb->setGeometry(QRect(20, 350, 141, 51));
+        userdb->setGeometry(QRect(29, 330, 191, 61));
+        userdb->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\351\200\232\347\224\250\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px 15px;\n"
+"    min-width: 120px;\n"
+"    min-height: 35px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\202\254\345\201\234\346\225\210\346\236\234 */\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\214\211\344\270\213\346\225\210\346\236\234 */\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         moneydb = new QPushButton(Manager);
         moneydb->setObjectName(QString::fromUtf8("moneydb"));
-        moneydb->setGeometry(QRect(170, 350, 141, 51));
+        moneydb->setGeometry(QRect(230, 330, 191, 61));
+        moneydb->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\351\200\232\347\224\250\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px 15px;\n"
+"    min-width: 120px;\n"
+"    min-height: 35px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\202\254\345\201\234\346\225\210\346\236\234 */\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\214\211\344\270\213\346\225\210\346\236\234 */\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         decrease_money = new QPushButton(Manager);
         decrease_money->setObjectName(QString::fromUtf8("decrease_money"));
-        decrease_money->setGeometry(QRect(320, 350, 141, 51));
+        decrease_money->setGeometry(QRect(230, 270, 150, 51));
+        decrease_money->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\351\200\232\347\224\250\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px 15px;\n"
+"    min-width: 120px;\n"
+"    min-height: 35px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\202\254\345\201\234\346\225\210\346\236\234 */\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"/* \346\214\211\351\222\256\346\214\211\344\270\213\346\225\210\346\236\234 */\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         label_image = new QLabel(Manager);
         label_image->setObjectName(QString::fromUtf8("label_image"));
-        label_image->setGeometry(QRect(480, 0, 301, 521));
+        label_image->setGeometry(QRect(430, 0, 351, 521));
 
         retranslateUi(Manager);
 

@@ -162,6 +162,11 @@ void Manager::on_increase_money_clicked()
 
     QString cardid = DatabaseManager::instance().getCardIdByStudentId(update_id);
     double money = update_money.toDouble();
+    if(money < 0)
+    {
+        QMessageBox::warning(this, "更新失败", "输入数据有误！");
+        return;
+    }
     bool success = DatabaseManager::instance().updateBalance(cardid,money);
 
     if(success)
@@ -219,6 +224,11 @@ void Manager::on_decrease_money_clicked()
 
     QString cardid = DatabaseManager::instance().getCardIdByStudentId(update_id);
     double money = update_money.toDouble();
+    if(money < 0)
+    {
+        QMessageBox::warning(this, "更新失败", "输入数据有误！");
+        return;
+    }
     money = -money;
     bool success = DatabaseManager::instance().updateBalance(cardid,money);
 
