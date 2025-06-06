@@ -82,12 +82,46 @@ QSqlQuery DatabaseManager::getUserInfoAsUser(const QString& studentId) {
     return executeQuery(queryStr);
 
 }
-
+//查询该学号是否已存在
 bool DatabaseManager::find_usrid(const QString& studentId) {
-    QString queryStr = QString("SELECT * FROM users WHERE student_id = '%1'").arg(studentId);
-    return executeQuery(queryStr).lastError().type() == QSqlError::NoError;
 
+        QString queryStr = QString("SELECT 1 FROM users WHERE student_id = '%1' LIMIT 1").arg(studentId);
+        QSqlQuery query = executeQuery(queryStr);
+
+        if (query.lastError().isValid()) {
+            qDebug() << "Database error:" << query.lastError().text();
+            return false;
+        }
+
+        return query.next();
+    }
+
+//查询该卡号是否已经存在
+bool DatabaseManager::find_cardid(const QString& cardId){
+    QString queryStr = QString("SELECT 1 FROM users WHERE card_id = '%1' LIMIT 1").arg(cardId);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.lastError().isValid()) {
+        qDebug() << "Database error:" << query.lastError().text();
+        return false;
+    }
+
+    return query.next();
 }
+
+//查询该密码是否已经存在
+bool DatabaseManager::find_password(const QString& password){
+    QString queryStr = QString("SELECT 1 FROM users WHERE password = '%1' LIMIT 1").arg(password);
+    QSqlQuery query = executeQuery(queryStr);
+
+    if (query.lastError().isValid()) {
+        qDebug() << "Database error:" << query.lastError().text();
+        return false;
+    }
+
+    return query.next();
+}
+
 
 //用户更改自己
 bool DatabaseManager::modifyUserSelf(const QString& studentId, const QString& newName, const QString& newPassword) {
@@ -277,14 +311,10 @@ QString DatabaseManager::register_error(const QString& studentId, const QString&
     if(DatabaseManager::instance().find_usrid(studentId)){
         return "学号重复";
     }
-     if(DatabaseManager::instance().getCardIdByStudentId(studentId)==cardId){
+     if(DatabaseManager::instance().find_cardid(cardId)){
     return "卡号重复";}
 
-     if(DatabaseManager::instance().getNameByStudentId( studentId)==name){
-    return "姓名重复";
-  }
-
-     if(DatabaseManager::instance().getpasswordByStudentId(studentId)==password){
+     if(DatabaseManager::instance().find_password(password)){
     return "密码重复";
   }
      else return "";
