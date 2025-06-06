@@ -14,7 +14,7 @@ Manager::Manager(QWidget *parent,QString usrname) :
     QString name = DatabaseManager::instance().getAdminNameById(usrname);
     ui->name_label->setText(name);
     //设置图片
-       QPixmap *pix = new QPixmap(":/images/3.png");
+       QPixmap *pix = new QPixmap(":/images/3.jpg");
        QSize sz = ui->label_image->size();
        ui->label_image->setPixmap(pix->scaled(sz));
 
