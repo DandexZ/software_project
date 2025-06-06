@@ -29,6 +29,8 @@ public:
     QSqlQuery getUserInfoAsUser(const QString& studentId);
     bool modifyUserSelf(const QString& studentId, const QString& newName, const QString& newPassword);
 bool find_usrid(const QString& studentId);
+bool find_cardid(const QString& cardId);
+bool find_password(const QString& password);
     bool modifyadminSelf(const QString& adminId, const QString& newPassword);
     QSqlQuery getUserInfoAsAdmin(const QString& studentId);
     bool modifyUserAsAdmin(const QString& studentId, const QString& name, const QString& cardId, const QString& password, double balance);

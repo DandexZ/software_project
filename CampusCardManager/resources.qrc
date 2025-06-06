@@ -3,5 +3,6 @@
         <file>images/1.png</file>
         <file>images/2.jpg</file>
         <file>database_initial/data.db</file>
+        <file>images/3.jpg</file>
     </qresource>
 </RCC>

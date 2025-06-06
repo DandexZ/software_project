@@ -5,6 +5,7 @@
 #include "show_money.h"
 #include <QInputDialog>
 #include<QMessageBox>
+#include<QGraphicsDropShadowEffect>
 
 Manager::Manager(QWidget *parent,QString usrname) :
     QWidget(parent),ui(new Ui::Manager),username(usrname)
@@ -12,6 +13,18 @@ Manager::Manager(QWidget *parent,QString usrname) :
     ui->setupUi(this);
     QString name = DatabaseManager::instance().getAdminNameById(usrname);
     ui->name_label->setText(name);
+    //设置图片
+       QPixmap *pix = new QPixmap(":/images/3.png");
+       QSize sz = ui->label_image->size();
+       ui->label_image->setPixmap(pix->scaled(sz));
+
+       //设置图片阴影效果
+       QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
+       shadow->setOffset(-3, 0);
+       shadow->setColor(QColor("#888888"));
+       shadow->setBlurRadius(30);
+       ui->label_image->setGraphicsEffect(shadow);
+
 }
 
 Manager::~Manager()
@@ -118,13 +131,13 @@ void Manager::on_destroy_user_clicked()
       }
 }
 
-void Manager::on_update_money_clicked()
+void Manager::on_increase_money_clicked()
 {
     bool ok;
     QString update_id = QInputDialog::getText(
         this,
-        "修改余额",
-        "请输入待修改的用户的学号",
+        "充值余额",
+        "请输入待充值的用户的学号",
         QLineEdit::Normal,
         "",
         &ok
@@ -136,8 +149,8 @@ void Manager::on_update_money_clicked()
 
     QString update_money = QInputDialog::getText(
         this,
-        "修改余额",
-        "请输入待修改的用户的余额",
+        "充值余额",
+        "请输入待充值的用户的余额",
         QLineEdit::Normal,
         "",
         &ok
@@ -173,4 +186,49 @@ void Manager::on_moneydb_clicked()
 {
     show_money* u=new show_money;
     u->show();
+}
+
+void Manager::on_decrease_money_clicked()
+{
+    bool ok;
+    QString update_id = QInputDialog::getText(
+        this,
+        "消费余额",
+        "请输入待消费的用户的学号",
+        QLineEdit::Normal,
+        "",
+        &ok
+    );
+
+    if (!ok || update_id.isEmpty()) {
+        return;  // 用户取消或未输入
+    }
+
+    QString update_money = QInputDialog::getText(
+        this,
+        "消费余额",
+        "请输入待消费的用户的余额",
+        QLineEdit::Normal,
+        "",
+        &ok
+    );
+
+    if (!ok || update_money.isEmpty()) {
+        return;  // 用户取消或未输入
+    }
+
+    QString cardid = DatabaseManager::instance().getCardIdByStudentId(update_id);
+    double money = update_money.toDouble();
+    money = -money;
+    bool success = DatabaseManager::instance().updateBalance(cardid,money);
+
+    if(success)
+    {
+        QMessageBox::information(this, "更新成功", "用户更新成功！");
+        //this->close(); // 关闭注册窗口（可选）
+    }
+    else
+    {
+        QMessageBox::warning(this, "更新失败", "数据库更新失败，请重试！");
+    }
 }

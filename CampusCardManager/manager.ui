@@ -32,10 +32,10 @@
   <widget class="QPushButton" name="ChangePassword">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>290</y>
-     <width>121</width>
-     <height>41</height>
+     <x>170</x>
+     <y>410</y>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -61,36 +61,36 @@
   <widget class="QPushButton" name="Sign_up">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>20</x>
      <y>290</y>
-     <width>111</width>
-     <height>41</height>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
     <string>注册用户</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="update_money">
+  <widget class="QPushButton" name="increase_money">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>320</x>
      <y>290</y>
-     <width>121</width>
-     <height>41</height>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>修改余额</string>
+    <string>充值金额</string>
    </property>
   </widget>
   <widget class="QPushButton" name="destroy_user">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>170</x>
      <y>290</y>
-     <width>121</width>
-     <height>41</height>
+     <width>141</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -116,7 +116,7 @@
   <widget class="QPushButton" name="userdb">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>20</x>
      <y>350</y>
      <width>141</width>
      <height>51</height>
@@ -129,7 +129,7 @@
   <widget class="QPushButton" name="moneydb">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>170</x>
      <y>350</y>
      <width>141</width>
      <height>51</height>
@@ -137,6 +137,32 @@
    </property>
    <property name="text">
     <string>查询流水数据库</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="decrease_money">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>350</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>消费金额</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_image">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>0</y>
+     <width>301</width>
+     <height>521</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

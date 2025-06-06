@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Manager_t {
-    QByteArrayData data[8];
-    char stringdata0[139];
+    QByteArrayData data[9];
+    char stringdata0[167];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,15 +37,16 @@ QT_MOC_LITERAL(1, 8, 25), // "on_ChangePassword_clicked"
 QT_MOC_LITERAL(2, 34, 0), // ""
 QT_MOC_LITERAL(3, 35, 18), // "on_Sign_up_clicked"
 QT_MOC_LITERAL(4, 54, 23), // "on_destroy_user_clicked"
-QT_MOC_LITERAL(5, 78, 23), // "on_update_money_clicked"
-QT_MOC_LITERAL(6, 102, 17), // "on_userdb_clicked"
-QT_MOC_LITERAL(7, 120, 18) // "on_moneydb_clicked"
+QT_MOC_LITERAL(5, 78, 25), // "on_increase_money_clicked"
+QT_MOC_LITERAL(6, 104, 17), // "on_userdb_clicked"
+QT_MOC_LITERAL(7, 122, 18), // "on_moneydb_clicked"
+QT_MOC_LITERAL(8, 141, 25) // "on_decrease_money_clicked"
 
     },
     "Manager\0on_ChangePassword_clicked\0\0"
     "on_Sign_up_clicked\0on_destroy_user_clicked\0"
-    "on_update_money_clicked\0on_userdb_clicked\0"
-    "on_moneydb_clicked"
+    "on_increase_money_clicked\0on_userdb_clicked\0"
+    "on_moneydb_clicked\0on_decrease_money_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +56,7 @@ static const uint qt_meta_data_Manager[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,14 +64,16 @@ static const uint qt_meta_data_Manager[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x08 /* Private */,
-       3,    0,   45,    2, 0x08 /* Private */,
-       4,    0,   46,    2, 0x08 /* Private */,
-       5,    0,   47,    2, 0x08 /* Private */,
-       6,    0,   48,    2, 0x08 /* Private */,
-       7,    0,   49,    2, 0x08 /* Private */,
+       1,    0,   49,    2, 0x08 /* Private */,
+       3,    0,   50,    2, 0x08 /* Private */,
+       4,    0,   51,    2, 0x08 /* Private */,
+       5,    0,   52,    2, 0x08 /* Private */,
+       6,    0,   53,    2, 0x08 /* Private */,
+       7,    0,   54,    2, 0x08 /* Private */,
+       8,    0,   55,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -90,9 +93,10 @@ void Manager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 0: _t->on_ChangePassword_clicked(); break;
         case 1: _t->on_Sign_up_clicked(); break;
         case 2: _t->on_destroy_user_clicked(); break;
-        case 3: _t->on_update_money_clicked(); break;
+        case 3: _t->on_increase_money_clicked(); break;
         case 4: _t->on_userdb_clicked(); break;
         case 5: _t->on_moneydb_clicked(); break;
+        case 6: _t->on_decrease_money_clicked(); break;
         default: ;
         }
     }
@@ -128,13 +132,13 @@ int Manager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

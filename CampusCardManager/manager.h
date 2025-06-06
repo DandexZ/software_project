@@ -25,11 +25,13 @@ private slots:
 
     void on_destroy_user_clicked();
 
-    void on_update_money_clicked();
+    void on_increase_money_clicked();
 
     void on_userdb_clicked();
 
     void on_moneydb_clicked();
+
+    void on_decrease_money_clicked();
 
 private:
     Ui::Manager *ui;
