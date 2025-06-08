@@ -146,6 +146,7 @@ public:
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
 "font: 10pt \"Candara\";"));
+        input_code->setEchoMode(QLineEdit::Password);
 
         horizontalLayout_2->addWidget(input_code);
 

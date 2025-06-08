@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}</string>
+  </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>

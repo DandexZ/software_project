@@ -27,6 +27,10 @@ public:
         if (show_user->objectName().isEmpty())
             show_user->setObjectName(QString::fromUtf8("show_user"));
         show_user->resize(827, 538);
+        show_user->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"    background-color: #f0f4f8;\n"
+"    font-family: 'Segoe UI', Arial, sans-serif;\n"
+"}"));
         tableView = new QTableView(show_user);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(15, 11, 791, 511));

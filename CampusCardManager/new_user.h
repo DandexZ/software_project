@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "DatabaseManager.h"
+#include<QSqlTableModel>
+
 namespace Ui {
 class new_user;
 }

@@ -33,73 +33,110 @@ public:
     QLineEdit *card;
     QLineEdit *code;
     QLineEdit *code_2;
+    QLabel *label_image;
 
     void setupUi(QWidget *new_user)
     {
         if (new_user->objectName().isEmpty())
             new_user->setObjectName(QString::fromUtf8("new_user"));
         new_user->resize(780, 520);
+        new_user->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"    background-color: #f0f4f8;\n"
+"    font-family: 'Segoe UI', Arial, sans-serif;\n"
+"}"));
         hint = new QLabel(new_user);
         hint->setObjectName(QString::fromUtf8("hint"));
-        hint->setGeometry(QRect(50, 30, 231, 71));
+        hint->setGeometry(QRect(450, 70, 311, 81));
+        hint->setStyleSheet(QString::fromUtf8("/* \346\240\207\351\242\230\346\240\267\345\274\217 */\n"
+"font: 12pt \"\346\245\267\344\275\223\";\n"
+"QLabel#titleLabel {\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    color: #2c3e50;\n"
+"    padding: 15px 0;\n"
+"}"));
         name_hint = new QLabel(new_user);
         name_hint->setObjectName(QString::fromUtf8("name_hint"));
-        name_hint->setGeometry(QRect(200, 120, 51, 41));
+        name_hint->setGeometry(QRect(488, 171, 51, 41));
         name_hint->setStyleSheet(QString::fromUtf8("font: 9pt \"\346\226\271\346\255\243\345\247\232\344\275\223\";"));
         code_hint = new QLabel(new_user);
         code_hint->setObjectName(QString::fromUtf8("code_hint"));
-        code_hint->setGeometry(QRect(200, 240, 51, 41));
+        code_hint->setGeometry(QRect(488, 291, 51, 41));
         code_hint->setStyleSheet(QString::fromUtf8("font: 9pt \"\346\226\271\346\255\243\345\247\232\344\275\223\";"));
         number_hint = new QLabel(new_user);
         number_hint->setObjectName(QString::fromUtf8("number_hint"));
-        number_hint->setGeometry(QRect(200, 160, 51, 41));
+        number_hint->setGeometry(QRect(488, 211, 51, 41));
         number_hint->setStyleSheet(QString::fromUtf8("font: 9pt \"\346\226\271\346\255\243\345\247\232\344\275\223\";"));
         code_hint2 = new QLabel(new_user);
         code_hint2->setObjectName(QString::fromUtf8("code_hint2"));
-        code_hint2->setGeometry(QRect(110, 280, 141, 41));
+        code_hint2->setGeometry(QRect(400, 330, 131, 41));
         code_hint2->setStyleSheet(QString::fromUtf8("font: 9pt \"\346\226\271\346\255\243\345\247\232\344\275\223\";"));
         sureButton = new QPushButton(new_user);
         sureButton->setObjectName(QString::fromUtf8("sureButton"));
-        sureButton->setGeometry(QRect(280, 350, 121, 31));
+        sureButton->setGeometry(QRect(540, 390, 160, 75));
+        sureButton->setStyleSheet(QString::fromUtf8("/* \346\214\211\351\222\256\346\240\267\345\274\217 */\n"
+"QPushButton {\n"
+"    background-color: #3498db;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    padding: 10px 20px;\n"
+"    min-width: 120px;\n"
+"    min-height: 40px;\n"
+"    font-weight: 500;\n"
+"    font-size: 14px;\n"
+"    margin-top: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #1a5276;\n"
+"}"));
         card_hint = new QLabel(new_user);
         card_hint->setObjectName(QString::fromUtf8("card_hint"));
-        card_hint->setGeometry(QRect(200, 200, 51, 41));
+        card_hint->setGeometry(QRect(488, 251, 51, 41));
         card_hint->setStyleSheet(QString::fromUtf8("font: 9pt \"\346\226\271\346\255\243\345\247\232\344\275\223\";"));
         name = new QLineEdit(new_user);
         name->setObjectName(QString::fromUtf8("name"));
-        name->setGeometry(QRect(250, 120, 211, 41));
+        name->setGeometry(QRect(540, 170, 211, 41));
         name->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
 "font: 10pt \"Candara\";"));
         number = new QLineEdit(new_user);
         number->setObjectName(QString::fromUtf8("number"));
-        number->setGeometry(QRect(252, 159, 211, 41));
+        number->setGeometry(QRect(540, 210, 211, 41));
         number->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
 "font: 10pt \"Candara\";"));
         card = new QLineEdit(new_user);
         card->setObjectName(QString::fromUtf8("card"));
-        card->setGeometry(QRect(252, 199, 211, 41));
+        card->setGeometry(QRect(541, 250, 211, 41));
         card->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
 "font: 10pt \"Candara\";"));
         code = new QLineEdit(new_user);
         code->setObjectName(QString::fromUtf8("code"));
-        code->setGeometry(QRect(252, 239, 211, 41));
+        code->setGeometry(QRect(540, 290, 211, 41));
         code->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
 "font: 10pt \"Candara\";"));
         code_2 = new QLineEdit(new_user);
         code_2->setObjectName(QString::fromUtf8("code_2"));
-        code_2->setGeometry(QRect(252, 279, 211, 41));
+        code_2->setGeometry(QRect(540, 330, 211, 41));
         code_2->setStyleSheet(QString::fromUtf8("background-color: rgb(247, 247, 247);\n"
 "border:1px groove gray;border-radius:\n"
 "7px;padding:2px 4px;\n"
 "font: 10pt \"Candara\";"));
+        label_image = new QLabel(new_user);
+        label_image->setObjectName(QString::fromUtf8("label_image"));
+        label_image->setGeometry(QRect(3, 0, 390, 520));
 
         retranslateUi(new_user);
 
@@ -116,6 +153,12 @@ public:
         code_hint2->setText(QCoreApplication::translate("new_user", "    \345\206\215\346\254\241\350\276\223\345\205\245\345\257\206\347\240\201", nullptr));
         sureButton->setText(QCoreApplication::translate("new_user", "\347\241\256\345\256\232", nullptr));
         card_hint->setText(QCoreApplication::translate("new_user", "\345\215\241\345\217\267", nullptr));
+        name->setPlaceholderText(QCoreApplication::translate("new_user", "please input  name", nullptr));
+        number->setPlaceholderText(QCoreApplication::translate("new_user", "pleace input  number", nullptr));
+        card->setPlaceholderText(QCoreApplication::translate("new_user", "please input  cardId", nullptr));
+        code->setPlaceholderText(QCoreApplication::translate("new_user", "please input  code", nullptr));
+        code_2->setPlaceholderText(QCoreApplication::translate("new_user", "pardon please", nullptr));
+        label_image->setText(QString());
     } // retranslateUi
 
 };

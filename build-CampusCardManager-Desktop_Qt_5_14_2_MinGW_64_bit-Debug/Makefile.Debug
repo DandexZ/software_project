@@ -135,9 +135,14 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_resources.cpp
 debug/qrc_resources.cpp: ../CampusCardManager/resources.qrc \
 		../../../Qt5.14.2/5.14.2/mingw73_64/bin/rcc.exe \
+		../CampusCardManager/images/4.jpg \
+		../CampusCardManager/images/8.jpg \
 		../CampusCardManager/images/1.png \
 		../CampusCardManager/images/3.jpg \
+		../CampusCardManager/images/7.jpg \
 		../CampusCardManager/images/2.jpg \
+		../CampusCardManager/images/6.jpg \
+		../CampusCardManager/images/5.jpg \
 		../CampusCardManager/database_initial/data.db
 	F:\qt\Qt5.14.2\5.14.2\mingw73_64\bin\rcc.exe -name resources ..\CampusCardManager\resources.qrc -o debug\qrc_resources.cpp
 
@@ -556,6 +561,10 @@ debug/moc_new_user.cpp: ../CampusCardManager/new_user.h \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qfileinfo.h \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QStandardPaths \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qstandardpaths.h \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtSql/QSqlTableModel \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtSql/qsqltablemodel.h \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtSql/qsqlquerymodel.h \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
 		debug/moc_predefs.h \
 		../../../Qt5.14.2/5.14.2/mingw73_64/bin/moc.exe
 	F:\qt\Qt5.14.2\5.14.2\mingw73_64\bin\moc.exe $(DEFINES) --include F:/qt/software_work/software_project/build-CampusCardManager-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IF:/qt/Qt5.14.2/5.14.2/mingw73_64/mkspecs/win32-g++ -IF:/qt/software_work/software_project/CampusCardManager -IF:/qt/Qt5.14.2/5.14.2/mingw73_64/include -IF:/qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets -IF:/qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui -IF:/qt/Qt5.14.2/5.14.2/mingw73_64/include/QtANGLE -IF:/qt/Qt5.14.2/5.14.2/mingw73_64/include/QtSql -IF:/qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore -I. -IF:/qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IF:/qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IF:/qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IF:/qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IF:/qt/Qt5.14.2/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IF:/qt/Qt5.14.2/Tools/mingw730_64/x86_64-w64-mingw32/include ..\CampusCardManager\new_user.h -o debug\moc_new_user.cpp
@@ -1740,6 +1749,10 @@ debug/new_user.o: ../CampusCardManager/new_user.cpp ../CampusCardManager/new_use
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qfileinfo.h \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QStandardPaths \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qstandardpaths.h \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtSql/QSqlTableModel \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtSql/qsqltablemodel.h \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtSql/qsqlquerymodel.h \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
 		ui_new_user.h \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QLabel \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
@@ -1756,7 +1769,9 @@ debug/new_user.o: ../CampusCardManager/new_user.cpp ../CampusCardManager/new_use
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtGui/qicon.h \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QMessageBox \
 		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qmessagebox.h \
-		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdialog.h
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qdialog.h \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/QGraphicsDropShadowEffect \
+		../../../Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets/qgraphicseffect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\new_user.o ..\CampusCardManager\new_user.cpp
 
 debug/show_money.o: ../CampusCardManager/show_money.cpp ../CampusCardManager/show_money.h \

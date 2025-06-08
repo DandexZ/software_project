@@ -10,6 +10,9 @@ show_user::show_user(QWidget *parent):
     m->setTable("users");
     ui->tableView->setModel(m);
     m->select();
+
+    this->setWindowTitle("AAA电脑维修 - 展示流水");
+    this->setWindowIcon(QIcon(":/images/8.jpg")); // 使用资源文件中的图标
 }
 
 show_user::~show_user()

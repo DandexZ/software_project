@@ -145,6 +145,9 @@ font: 10pt &quot;Candara&quot;;</string>
          <property name="text">
           <string/>
          </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
          <property name="placeholderText">
           <string>Please input your password</string>
          </property>

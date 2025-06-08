@@ -12,6 +12,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->statusBar()->hide();  // 移除状态栏
+    // 设置窗口标题
+    this->setWindowTitle("AAA电脑维修 - 登录界面");
+    this->setWindowIcon(QIcon(":/images/4.jpg")); // 使用资源文件中的图标
+
+
+    //允许使用空格表示确定
     connect(ui->input_code, &QLineEdit::returnPressed, ui->pushButton, &QPushButton::click);
 
     //设置图片

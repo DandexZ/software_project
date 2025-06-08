@@ -13,6 +13,11 @@ Manager::Manager(QWidget *parent,QString usrname) :
     ui->setupUi(this);
     QString name = DatabaseManager::instance().getAdminNameById(usrname);
     ui->name_label->setText(name);
+
+    // 设置窗口标题
+    this->setWindowTitle("AAA电脑维修 - 管理员界面");
+    this->setWindowIcon(QIcon(":/images/6.jpg")); // 使用资源文件中的图标
+
     //设置图片
        QPixmap *pix = new QPixmap(":/images/3.jpg");
        QSize sz = ui->label_image->size();
@@ -59,6 +64,12 @@ void Manager::on_ChangePassword_clicked()
       );
 
       if (!ok || newPassword.isEmpty()) {
+          return;
+      }
+
+      if(newPassword.size()<6)
+      {
+          QMessageBox::warning(this, "注册失败", "密码长度不少于6位!");
           return;
       }
 
