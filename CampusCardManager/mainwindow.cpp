@@ -71,7 +71,7 @@ void MainWindow::on_pushButton_clicked()
     }
 
     if(loginSuccess2){
-        UsrWindow *usr = new UsrWindow(nullptr);
+        UsrWindow *usr = new UsrWindow(nullptr,usrname);
         usr->show();  // 显示新窗口
         // 建议设置：当新窗口关闭时自动释放内存
         usr->setAttribute(Qt::WA_DeleteOnClose);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>show_money</class>
- <widget class="QWidget" name="show_money">
+ <class>show_usr_money</class>
+ <widget class="QWidget" name="show_usr_money">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,12 +12,6 @@
   </property>
   <property name="windowTitle">
    <string>Form</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">QWidget {
-    background-color: #f0f4f8;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}</string>
   </property>
   <widget class="QTableView" name="tableView">
    <property name="geometry">

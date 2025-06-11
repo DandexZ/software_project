@@ -18,6 +18,7 @@ SOURCES += \
     new_user.cpp \
     show_money.cpp \
     show_user.cpp \
+    show_usr_money.cpp \
     usrwindow.cpp
 
 HEADERS += \
@@ -27,6 +28,7 @@ HEADERS += \
     new_user.h \
     show_money.h \
     show_user.h \
+    show_usr_money.h \
     usrwindow.h
 
 FORMS += \
@@ -35,6 +37,7 @@ FORMS += \
     new_user.ui \
     show_money.ui \
     show_user.ui \
+    show_usr_money.ui \
     usrwindow.ui
 
 # Default rules for deployment.

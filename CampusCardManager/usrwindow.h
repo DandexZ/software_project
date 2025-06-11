@@ -14,7 +14,8 @@ class UsrWindow : public QWidget
     Q_OBJECT
 
 public:
-    UsrWindow(QWidget *parent ,QString &db_path);
+    //UsrWindow(QWidget *parent ,QString &db_path);QWidget *parent ,QString usrname
+    UsrWindow(QWidget *parent ,QString usrname);
     explicit UsrWindow(QWidget *parent = nullptr);
     ~UsrWindow();
 
@@ -25,6 +26,9 @@ private slots:
 
 private:
     Ui::UsrWindow *ui;
+    QString username;
+    QString cardId;
+    QString name;
 };
 
 #endif // USRWINDOW_H

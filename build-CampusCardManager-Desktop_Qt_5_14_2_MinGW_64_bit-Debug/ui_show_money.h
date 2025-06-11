@@ -33,7 +33,7 @@ public:
 "}"));
         tableView = new QTableView(show_money);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(10, 10, 811, 521));
+        tableView->setGeometry(QRect(0, 0, 811, 521));
 
         retranslateUi(show_money);
 

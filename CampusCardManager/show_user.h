@@ -15,6 +15,7 @@ class show_user : public QWidget
 
 public:
     explicit show_user(QWidget *parent = nullptr);
+ //   show_user(QWidget *parent ,QString cardId);
     ~show_user();
 
 private slots:
@@ -22,6 +23,7 @@ private slots:
 private:
     Ui::show_user *ui;
     QSqlTableModel *m;
+  //  QString cardId;
 };
 
 #endif // SHOW_USER_H
