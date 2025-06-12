@@ -13,7 +13,7 @@ show_usr_money::show_usr_money(QWidget *parent,QString cardid) :
     ui->tableView->setModel(m);
     m->select();
 
-    this->setWindowTitle("AAA电脑维修 - 展示用户数据");
+    this->setWindowTitle("AAA电脑维修 - 展示流水");
     this->setWindowIcon(QIcon(":/images/8.jpg")); // 使用资源文件中的图标
 }
 

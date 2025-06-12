@@ -1,4 +1,4 @@
-QT       += core gui
+QT += core gui
 # 加入SQL模块
 QT += sql
 

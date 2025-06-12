@@ -3,6 +3,7 @@
 #include "new_user.h"
 #include "show_user.h"
 #include "show_money.h"
+#include "mainwindow.h"
 #include <QInputDialog>
 #include<QMessageBox>
 #include<QGraphicsDropShadowEffect>
@@ -253,3 +254,11 @@ void Manager::on_decrease_money_clicked()
         QMessageBox::warning(this, "更新失败", "数据库更新失败，请重试！");
     }
 }
+
+void Manager::on_Exit_clicked()
+{
+    this->close();
+    MainWindow *main = new MainWindow();
+    main->show();
+}
+

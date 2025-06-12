@@ -213,6 +213,13 @@ bool DatabaseManager::updateBalance(const QString& cardId, double amount) {
         return false;
     }
 
+    //检查是否执行
+    int affectedRows = query.numRowsAffected();
+    if (affectedRows == 0) {
+        qDebug() << "执行成功，但用户不存在（无数据被更新）";
+        return false;
+    }
+
     // 准备插入余额变动记录
     QString type = (amount >= 0) ? "increase" : "decrease";
     QString insertLog = QString("INSERT INTO balance_change (date, card_id, change_type, amount) "

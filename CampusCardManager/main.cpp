@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "DatabaseManager.h"
 #include <QApplication>
+#include <qwidget.h>
 #include<iostream>
 using namespace std;
 QString getDatabasePath() {

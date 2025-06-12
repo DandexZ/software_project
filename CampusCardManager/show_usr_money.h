@@ -14,7 +14,6 @@ class show_usr_money : public QWidget
 
 public:
     show_usr_money(QWidget *parent ,QString cardId);
-    explicit show_usr_money(QWidget *parent = nullptr);
 
     ~show_usr_money();
 

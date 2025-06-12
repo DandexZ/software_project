@@ -40,7 +40,7 @@ QWidget {
   <widget class="QPushButton" name="ChangePassword">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>70</x>
      <y>400</y>
      <width>150</width>
      <height>51</height>
@@ -332,6 +332,42 @@ QPushButton:pressed {
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Exit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>400</y>
+     <width>150</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* 按钮通用样式 */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    min-width: 120px;
+    min-height: 35px;
+    font-weight: 500;
+}
+
+/* 按钮悬停效果 */
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+/* 按钮按下效果 */
+QPushButton:pressed {
+    background-color: #1a5276;
+}</string>
+   </property>
+   <property name="text">
+    <string>退出登录</string>
    </property>
   </widget>
  </widget>

@@ -16,13 +16,14 @@ class UsrWindow : public QWidget
 public:
     //UsrWindow(QWidget *parent ,QString &db_path);QWidget *parent ,QString usrname
     UsrWindow(QWidget *parent ,QString usrname);
-    explicit UsrWindow(QWidget *parent = nullptr);
     ~UsrWindow();
 
 private slots:
     void on_SearchTransactions_clicked();
 
     void on_ChangePassword_clicked();
+
+    void on_ChangePassword_2_clicked();
 
 private:
     Ui::UsrWindow *ui;

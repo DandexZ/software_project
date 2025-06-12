@@ -1,6 +1,6 @@
 #include "usrwindow.h"
 #include "ui_usrwindow.h"
-
+#include "mainwindow.h"
 #include "show_user.h"
 #include "show_usr_money.h"
 
@@ -98,3 +98,11 @@ void UsrWindow::on_ChangePassword_clicked() //点击修改密码
             QMessageBox::warning(this, "修改失败", "数据库修改失败，请重试！");
         }
 }
+
+void UsrWindow::on_ChangePassword_2_clicked()
+{
+    this->close();
+    MainWindow *main = new MainWindow();
+    main->show();
+}
+

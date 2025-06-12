@@ -146,7 +146,7 @@ font: 10pt &quot;Candara&quot;;</string>
           <string/>
          </property>
          <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
+          <enum>QLineEdit::EchoMode::Password</enum>
          </property>
          <property name="placeholderText">
           <string>Please input your password</string>
@@ -189,9 +189,9 @@ font: 10pt &quot;Candara&quot;;</string>
    <widget class="QLabel" name="label_load">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>100</x>
       <y>100</y>
-      <width>161</width>
+      <width>251</width>
       <height>51</height>
      </rect>
     </property>
@@ -201,7 +201,7 @@ font: 10pt &quot;Candara&quot;;</string>
 </string>
     </property>
     <property name="text">
-     <string>登录界面</string>
+     <string>校园卡管理系统</string>
     </property>
    </widget>
   </widget>

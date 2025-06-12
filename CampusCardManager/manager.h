@@ -14,7 +14,6 @@ class Manager : public QWidget
 
 public:
     Manager(QWidget *parent ,QString usrname);
-    explicit Manager(QWidget *parent = nullptr);
     ~Manager();
 
 private slots:
@@ -32,6 +31,8 @@ private slots:
     void on_moneydb_clicked();
 
     void on_decrease_money_clicked();
+
+    void on_Exit_clicked();
 
 private:
     Ui::Manager *ui;
