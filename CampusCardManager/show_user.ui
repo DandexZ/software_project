@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>827</width>
-    <height>538</height>
+    <width>844</width>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,11 +22,47 @@
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>15</x>
-     <y>11</y>
-     <width>791</width>
+     <x>10</x>
+     <y>60</y>
+     <width>821</width>
      <height>511</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>10</y>
+     <width>481</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>29</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>查询</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>输入查询的用户信息：</string>
    </property>
   </widget>
  </widget>

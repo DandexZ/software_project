@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(QIcon(":/images/4.jpg")); // 使用资源文件中的图标
 
 
-    //允许使用空格表示确定
+    //允许使用回车表示确定
     connect(ui->input_code, &QLineEdit::returnPressed, ui->pushButton, &QPushButton::click);
 
     //设置图片

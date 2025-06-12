@@ -4,7 +4,7 @@
 #include <QWidget>
 #include<DatabaseManager.h>
 #include<QSqlTableModel>
-
+#include<QMessageBox>
 namespace Ui {
 class show_user;
 }
@@ -19,6 +19,8 @@ public:
     ~show_user();
 
 private slots:
+
+    void on_pushButton_clicked();
 
 private:
     Ui::show_user *ui;

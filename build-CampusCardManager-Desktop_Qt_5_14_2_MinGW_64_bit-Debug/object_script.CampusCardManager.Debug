@@ -1,0 +1,16 @@
+debug/DatabaseManager.o
+debug/main.o
+debug/mainwindow.o
+debug/manager.o
+debug/new_user.o
+debug/show_money.o
+debug/show_user.o
+debug/show_usr_money.o
+debug/qrc_resources.o
+debug/moc_mainwindow.o
+debug/moc_manager.o
+debug/moc_new_user.o
+debug/moc_show_money.o
+debug/moc_show_user.o
+debug/moc_show_usr_money.o
+debug/moc_usrwindow.o
